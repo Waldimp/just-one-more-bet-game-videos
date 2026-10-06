@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  14 · Negro. Solo el clic de una palanca de tragamonedas en la oscuridad.
+-->
+<html
+  lang="es"
+  data-composition-variables='[{"id":"lang","type":"enum","label":"Idioma","default":"es","options":[{"value":"es","label":"Español"},{"value":"en","label":"English"}]}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>14 · Negro</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="shared/js/cues.js"></script>
+    <script src="shared/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="s14-root"
+      data-composition-id="s14"
+      data-start="0"
+      data-duration="2"
+      data-width="1920"
+      data-height="1080"
+      data-fps="60"
+    >
+      <div class="black"></div>
+      <audio id="s14-palanca" src="sfx/lever.wav" data-start="0.85" data-duration="1.15"
+        data-volume="0.9" data-track-index="10"></audio>
+    </div>
+
+    <script>
+      // Todo dentro de una funcion: en el index.html del trailer completo las 16 escenas
+      // comparten pagina, y cada una tiene que quedarse con lo suyo.
+      (function () {
+        const SCENE = "14-negro";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("s14-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          // Nada que animar: dos segundos de negro.
+          window.__timelines["s14"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

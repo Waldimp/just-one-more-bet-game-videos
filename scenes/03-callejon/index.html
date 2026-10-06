@@ -1,0 +1,72 @@
+<!doctype html>
+<!--
+  03 · El callejon y la firma (acto 1, 84). Cmaj9 y Fa7M: la falsa esperanza en mayor.
+  Corte 1: el callejon; ella llega a la farola y el cobrador ya sale a la luz (tiempo 2).
+  Corte 2 (tiempo 3): la firma de cerca, con el expediente de verdad (cifras del juego):
+  el garabato y el sobre que pasa de mano.
+  Texto: a maquina desde el tiempo 4, con "si te presta" en dorado (lo que dice el cobrador
+  va en dorado en el juego).
+-->
+<html
+  lang="es"
+  data-composition-variables='[{"id":"lang","type":"enum","label":"Idioma","default":"es","options":[{"value":"es","label":"Español"},{"value":"en","label":"English"}]}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>03 · El callejón</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="shared/js/cues.js"></script>
+    <script src="shared/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="s03-root"
+      data-composition-id="s03"
+      data-start="0"
+      data-duration="5.716667"
+      data-width="1920"
+      data-height="1080"
+      data-fps="60"
+    >
+      <div class="shot">
+        <video data-media-start="4.5667" data-duration="2.1333" data-start="0" id="s03-callejon" class="clip" src="captures/03_callejon.mp4"
+          data-beats="0 3" data-sync="6.0@2" data-track-index="0" muted playsinline></video>
+        <video data-media-start="1.9" data-duration="3.5833" data-start="2.1333" id="s03-firma" class="clip" src="captures/03_firma.mp4"
+          data-beats="3 end" data-sync="1.9@3" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="bar top"></div>
+      <div class="bar bottom"></div>
+      <div class="t" id="s03-texto"><span data-t="line1">Pero alguien </span><span class="gold" data-t="line2">sí te presta.</span></div>
+    </div>
+
+    <script>
+      // Todo dentro de una funcion: en el index.html del trailer completo las 16 escenas
+      // comparten pagina, y cada una tiene que quedarse con lo suyo.
+      (function () {
+        const SCENE = "03-callejon";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("s03-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          const text = document.getElementById("s03-texto");
+          text.style.top = "984px";
+          T.center(text, 960);
+          const spans = text.querySelectorAll("span");
+          const end = T.type(tl, spans[0], T.beat(SCENE, 4), 28);
+          T.type(tl, spans[1], end + 0.12, 28);
+          window.__timelines["s03"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,297 @@
+<!doctype html>
+<!--
+  16 · El logo y el golpe. La-9 con toda la banda: por fin resuelve la dominante que el
+  corte del reloj dejo colgada.
+  Detras, la fachada del leon casi a negro. La ficha del logo del juego (su hoja de 8
+  fotogramas) entra girando a x8 y frena de cara.
+  El titulo cae con el golpe. Debajo: "Ya en itch.io", la web, el contador de la deuda
+  subiendo (empieza en la cifra real del juego) y el aviso legal.
+  Al final, fundido a negro en cuatro escalones.
+-->
+<html
+  lang="es"
+  data-composition-variables='[{"id":"lang","type":"enum","label":"Idioma","default":"es","options":[{"value":"es","label":"Español"},{"value":"en","label":"English"}]}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>16 · Just One More Bet</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="shared/js/cues.js"></script>
+    <script src="shared/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="s16-root"
+      data-composition-id="s16"
+      data-start="0"
+      data-duration="9"
+      data-width="1920"
+      data-height="1080"
+      data-fps="60"
+    >
+      <!-- La fachada del leon, la misma del parqueo, casi a negro: se cierra donde se entro. -->
+      <img class="pixel" id="s16-fondo" src="shared/img/fachada.png" alt="" />
+      <div class="black" id="s16-velo"></div>
+      <div class="flash" id="s16-flash"></div>
+      <div id="s16-ficha"></div>
+      <div class="t c6 gold" id="s16-titulo1" data-t="title1">JUST ONE</div>
+      <div class="t c6 gold" id="s16-titulo2" data-t="title2">MORE BET</div>
+      <div class="t" id="s16-itch" data-t="available">Ya en itch.io</div>
+      <div class="t c2 gold" id="s16-url" data-t="url">just-one-more-bet-web.vercel.app</div>
+      <div class="t red" id="s16-deuda">DEUDA ₡88.888.000</div>
+      <div class="t c2" id="s16-legal" data-t="legal">Contiene apuestas simuladas. Sin dinero real. +18.</div>
+      <div class="black" id="s16-negro"></div>
+
+      <audio id="s16-ficha-sonido" src="sfx/chip.wav" data-start="1.62" data-duration="0.8"
+        data-volume="0.7" data-track-index="10"></audio>
+      <audio id="s16-tic00" src="sfx/counter_tick.wav" data-start="2.100" data-duration="0.06"
+        data-volume="0.22" data-track-index="11"></audio>
+      <audio id="s16-tic01" src="sfx/counter_tick.wav" data-start="2.360" data-duration="0.06"
+        data-volume="0.23" data-track-index="12"></audio>
+      <audio id="s16-tic02" src="sfx/counter_tick.wav" data-start="2.602" data-duration="0.06"
+        data-volume="0.24" data-track-index="11"></audio>
+      <audio id="s16-tic03" src="sfx/counter_tick.wav" data-start="2.827" data-duration="0.06"
+        data-volume="0.24" data-track-index="12"></audio>
+      <audio id="s16-tic04" src="sfx/counter_tick.wav" data-start="3.036" data-duration="0.06"
+        data-volume="0.25" data-track-index="11"></audio>
+      <audio id="s16-tic05" src="sfx/counter_tick.wav" data-start="3.230" data-duration="0.06"
+        data-volume="0.26" data-track-index="12"></audio>
+      <audio id="s16-tic06" src="sfx/counter_tick.wav" data-start="3.411" data-duration="0.06"
+        data-volume="0.27" data-track-index="11"></audio>
+      <audio id="s16-tic07" src="sfx/counter_tick.wav" data-start="3.579" data-duration="0.06"
+        data-volume="0.28" data-track-index="12"></audio>
+      <audio id="s16-tic08" src="sfx/counter_tick.wav" data-start="3.736" data-duration="0.06"
+        data-volume="0.28" data-track-index="11"></audio>
+      <audio id="s16-tic09" src="sfx/counter_tick.wav" data-start="3.881" data-duration="0.06"
+        data-volume="0.29" data-track-index="12"></audio>
+      <audio id="s16-tic10" src="sfx/counter_tick.wav" data-start="4.017" data-duration="0.06"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio id="s16-tic11" src="sfx/counter_tick.wav" data-start="4.142" data-duration="0.06"
+        data-volume="0.31" data-track-index="12"></audio>
+      <audio id="s16-tic12" src="sfx/counter_tick.wav" data-start="4.259" data-duration="0.06"
+        data-volume="0.32" data-track-index="11"></audio>
+      <audio id="s16-tic13" src="sfx/counter_tick.wav" data-start="4.368" data-duration="0.06"
+        data-volume="0.32" data-track-index="12"></audio>
+      <audio id="s16-tic14" src="sfx/counter_tick.wav" data-start="4.470" data-duration="0.06"
+        data-volume="0.33" data-track-index="11"></audio>
+      <audio id="s16-tic15" src="sfx/counter_tick.wav" data-start="4.564" data-duration="0.06"
+        data-volume="0.34" data-track-index="12"></audio>
+      <audio id="s16-tic16" src="sfx/counter_tick.wav" data-start="4.651" data-duration="0.06"
+        data-volume="0.35" data-track-index="11"></audio>
+      <audio id="s16-tic17" src="sfx/counter_tick.wav" data-start="4.733" data-duration="0.06"
+        data-volume="0.36" data-track-index="12"></audio>
+      <audio id="s16-tic18" src="sfx/counter_tick.wav" data-start="4.808" data-duration="0.06"
+        data-volume="0.36" data-track-index="11"></audio>
+      <audio id="s16-tic19" src="sfx/counter_tick.wav" data-start="4.879" data-duration="0.06"
+        data-volume="0.37" data-track-index="12"></audio>
+      <audio id="s16-tic20" src="sfx/counter_tick.wav" data-start="4.949" data-duration="0.06"
+        data-volume="0.38" data-track-index="11"></audio>
+      <audio id="s16-tic21" src="sfx/counter_tick.wav" data-start="5.019" data-duration="0.06"
+        data-volume="0.39" data-track-index="12"></audio>
+      <audio id="s16-tic22" src="sfx/counter_tick.wav" data-start="5.089" data-duration="0.06"
+        data-volume="0.40" data-track-index="11"></audio>
+      <audio id="s16-tic23" src="sfx/counter_tick.wav" data-start="5.159" data-duration="0.06"
+        data-volume="0.40" data-track-index="12"></audio>
+      <audio id="s16-tic24" src="sfx/counter_tick.wav" data-start="5.229" data-duration="0.06"
+        data-volume="0.41" data-track-index="11"></audio>
+      <audio id="s16-tic25" src="sfx/counter_tick.wav" data-start="5.299" data-duration="0.06"
+        data-volume="0.42" data-track-index="12"></audio>
+      <audio id="s16-tic26" src="sfx/counter_tick.wav" data-start="5.369" data-duration="0.06"
+        data-volume="0.43" data-track-index="11"></audio>
+      <audio id="s16-tic27" src="sfx/counter_tick.wav" data-start="5.439" data-duration="0.06"
+        data-volume="0.44" data-track-index="12"></audio>
+      <audio id="s16-tic28" src="sfx/counter_tick.wav" data-start="5.509" data-duration="0.06"
+        data-volume="0.44" data-track-index="11"></audio>
+      <audio id="s16-tic29" src="sfx/counter_tick.wav" data-start="5.579" data-duration="0.06"
+        data-volume="0.45" data-track-index="12"></audio>
+      <audio id="s16-tic30" src="sfx/counter_tick.wav" data-start="5.649" data-duration="0.06"
+        data-volume="0.46" data-track-index="11"></audio>
+      <audio id="s16-tic31" src="sfx/counter_tick.wav" data-start="5.719" data-duration="0.06"
+        data-volume="0.47" data-track-index="12"></audio>
+      <audio id="s16-tic32" src="sfx/counter_tick.wav" data-start="5.789" data-duration="0.06"
+        data-volume="0.48" data-track-index="11"></audio>
+      <audio id="s16-tic33" src="sfx/counter_tick.wav" data-start="5.859" data-duration="0.06"
+        data-volume="0.48" data-track-index="12"></audio>
+      <audio id="s16-tic34" src="sfx/counter_tick.wav" data-start="5.929" data-duration="0.06"
+        data-volume="0.49" data-track-index="11"></audio>
+      <audio id="s16-tic35" src="sfx/counter_tick.wav" data-start="5.999" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic36" src="sfx/counter_tick.wav" data-start="6.069" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic37" src="sfx/counter_tick.wav" data-start="6.139" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic38" src="sfx/counter_tick.wav" data-start="6.209" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic39" src="sfx/counter_tick.wav" data-start="6.279" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic40" src="sfx/counter_tick.wav" data-start="6.349" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic41" src="sfx/counter_tick.wav" data-start="6.419" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic42" src="sfx/counter_tick.wav" data-start="6.489" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic43" src="sfx/counter_tick.wav" data-start="6.559" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic44" src="sfx/counter_tick.wav" data-start="6.629" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic45" src="sfx/counter_tick.wav" data-start="6.699" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic46" src="sfx/counter_tick.wav" data-start="6.769" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic47" src="sfx/counter_tick.wav" data-start="6.839" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic48" src="sfx/counter_tick.wav" data-start="6.909" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic49" src="sfx/counter_tick.wav" data-start="6.979" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic50" src="sfx/counter_tick.wav" data-start="7.049" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic51" src="sfx/counter_tick.wav" data-start="7.119" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic52" src="sfx/counter_tick.wav" data-start="7.189" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic53" src="sfx/counter_tick.wav" data-start="7.259" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic54" src="sfx/counter_tick.wav" data-start="7.329" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic55" src="sfx/counter_tick.wav" data-start="7.399" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic56" src="sfx/counter_tick.wav" data-start="7.469" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic57" src="sfx/counter_tick.wav" data-start="7.539" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic58" src="sfx/counter_tick.wav" data-start="7.609" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic59" src="sfx/counter_tick.wav" data-start="7.679" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic60" src="sfx/counter_tick.wav" data-start="7.749" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic61" src="sfx/counter_tick.wav" data-start="7.819" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic62" src="sfx/counter_tick.wav" data-start="7.889" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic63" src="sfx/counter_tick.wav" data-start="7.959" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic64" src="sfx/counter_tick.wav" data-start="8.029" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic65" src="sfx/counter_tick.wav" data-start="8.099" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic66" src="sfx/counter_tick.wav" data-start="8.169" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic67" src="sfx/counter_tick.wav" data-start="8.239" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+      <audio id="s16-tic68" src="sfx/counter_tick.wav" data-start="8.309" data-duration="0.06"
+        data-volume="0.50" data-track-index="11"></audio>
+      <audio id="s16-tic69" src="sfx/counter_tick.wav" data-start="8.379" data-duration="0.06"
+        data-volume="0.50" data-track-index="12"></audio>
+    </div>
+
+    <script>
+      // Todo dentro de una funcion: en el index.html del trailer completo las 16 escenas
+      // comparten pagina, y cada una tiene que quedarse con lo suyo.
+      (function () {
+        const SCENE = "16-logo";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("s16-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          const texts = T.texts(SCENE);
+          // Fondo: la fachada del leon a x3, tapada al 82 % con la tinta.
+          Object.assign(document.getElementById("s16-fondo").style, {
+            width: "1920px", height: "1080px",
+          });
+          document.getElementById("s16-velo").style.opacity = "0.82";
+          // La ficha: la hoja del juego (4x2 fotogramas de 64 px) a x8, sin suavizado.
+          const SIDE = 512;
+          const chip = document.getElementById("s16-ficha");
+          Object.assign(chip.style, {
+            position: "absolute", width: SIDE + "px", height: SIDE + "px",
+            backgroundImage: "url(shared/img/logo_chip_sheet.png)",
+            backgroundSize: SIDE * 4 + "px " + SIDE * 2 + "px", imageRendering: "pixelated",
+          });
+          const frame = function (i) {
+            const k = i % 8;
+            return -(k % 4) * SIDE + "px " + -Math.floor(k / 4) * SIDE + "px";
+          };
+          // Composicion: ficha a la izquierda y el titulo en dos lineas a su derecha, el grupo
+          // centrado; debajo, centrado, lo demas.
+          const t1 = document.getElementById("s16-titulo1");
+          const t2 = document.getElementById("s16-titulo2");
+          const titleW = Math.max(t1.getBoundingClientRect().width, t2.getBoundingClientRect().width);
+          const left = T.snap((1920 - (SIDE + 72 + titleW)) / 2);
+          chip.style.left = left + "px";
+          chip.style.top = "69px";
+          t1.style.left = left + SIDE + 72 + "px";
+          t2.style.left = left + SIDE + 72 + "px";
+          t1.style.top = "153px";
+          t2.style.top = "333px";
+          const place = function (id, top) {
+            const el = document.getElementById(id);
+            el.style.top = top + "px";
+            T.center(el, 960);
+            return el;
+          };
+          const itch = place("s16-itch", 642);
+          const url = place("s16-url", 738);
+          const legal = place("s16-legal", 990);
+          legal.style.color = "rgba(240, 232, 212, 0.62)";
+          const debt = document.getElementById("s16-deuda");
+          debt.style.top = "831px";
+
+          // El golpe: fogonazo de dos fotogramas, ficha girando, titulo de golpe.
+          tl.set("#s16-flash", { opacity: 1 }, 0);
+          tl.set("#s16-flash", { opacity: 0.45 }, 1 / 60);
+          tl.set("#s16-flash", { opacity: 0 }, 2 / 60);
+          tl.set("#s16-negro", { opacity: 0 }, 0);
+          let t = 0;
+          let dt = 0.03;
+          let i = 0;
+          while (t < 1.6 || i % 8 !== 0) {
+            tl.set(chip, { backgroundPosition: frame(i) }, t);
+            t += dt;
+            dt = Math.min(0.11, dt * 1.06);
+            i += 1;
+          }
+          tl.set(chip, { backgroundPosition: frame(0) }, t);
+          T.slam(tl, t1, 0);
+          T.slam(tl, t2, 0);
+          T.jolt(tl, chip, 0, 3);
+          T.jolt(tl, t1, 0, 3);
+          T.jolt(tl, t2, 0, 3);
+
+          const after = T.type(tl, itch, 0.9, 30);
+          T.type(tl, url, after + 0.15, 40);
+          T.slam(tl, legal, 2.6);
+
+          // La deuda: arranca en la cifra real y sube cada vez mas rapido. El texto sale de un
+          // objeto que GSAP interpola, asi que buscar cualquier instante pinta la cifra exacta.
+          const label = (texts.debt_label || "DEUDA") + " ";
+          const sep = texts.thousands || ".";
+          const counter = { v: 88888000 };
+          const paint = function () {
+            debt.textContent = label + T.money(counter.v, sep);
+            T.center(debt, 960);
+          };
+          paint();
+          tl.set(debt, { opacity: 0 }, 0);
+          tl.set(debt, { opacity: 1 }, 2.0);
+          tl.fromTo(counter, { v: 88888000 }, {
+            v: 88888000 + 6200000, duration: 6.5, ease: "power2.in", onUpdate: paint,
+          }, 2.0);
+          T.stepFade(tl, "#s16-negro", 0, 1, 8.45, 0.5, 4);
+          window.__timelines["s16"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

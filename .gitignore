@@ -1,0 +1,16 @@
+# Pesado o regenerable: no se versiona.
+/captures/
+/renders/
+/out/
+/review/
+/audio/
+/sfx/
+node_modules/
+.hyperframes/
+
+# Generados por `npm run sync` (los regenera render, assemble y music).
+shared/js/cues.js
+shared/js/texts.js
+/index.html
+
+*.log

@@ -1,0 +1,220 @@
+<!doctype html>
+<!--
+  11 · El montaje a todo trapo: accelerando de 132 a 168, el doble del arranque.
+  Cortes cada dos tiempos al principio y cada tiempo despues (de ~0,9 s a ~0,36 s): las
+  mesas, los caballos llegando a camara lenta y el HUD: el dinero sube y baja, las acciones
+  pasan de tres a ninguna y el reloj vuela. Cada corte lleva su sonido del juego, bajo.
+  Sale del pase de carrete de la escena 10.
+  Texto: "Una mas." tres veces, cada vez mas grande; la ultima, en rojo.
+  Cada corte: data-beats="desde hasta" (tiempos) y data-sync="segundo_fuente@tiempo".
+-->
+<html
+  lang="es"
+  data-composition-variables='[{"id":"lang","type":"enum","label":"Idioma","default":"es","options":[{"value":"es","label":"Español"},{"value":"en","label":"English"}]}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>11 · Una más</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="shared/js/cues.js"></script>
+    <script src="shared/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="s11-root"
+      data-composition-id="s11"
+      data-start="0"
+      data-duration="9.65"
+      data-width="1920"
+      data-height="1080"
+      data-fps="60"
+    >
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-828px, -660px) scale(2)">
+          <video data-media-start="0.45" data-duration="0.9" data-start="0" id="s11-c00" class="clip" src="captures/06_slots.mp4"
+            data-beats="0 2" data-sync="0.45@0" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-120px, -840px) scale(2)">
+          <video data-media-start="3" data-duration="0.8833" data-start="0.9" id="s11-c01" class="clip" src="captures/07_ruleta.mp4"
+            data-beats="2 4" data-sync="3.0@2" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+          <video data-media-start="1.55" data-duration="0.8667" data-start="1.7833" id="s11-c02" class="clip" src="captures/11_hud.mp4"
+            data-beats="4 6" data-sync="1.55@4" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-510px, -1080px) scale(2)">
+          <video data-media-start="0.6" data-duration="0.8333" data-start="2.65" id="s11-c03" class="clip" src="captures/07_blackjack.mp4"
+            data-beats="6 8" data-sync="0.6@6" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <video data-media-start="2" data-duration="0.8333" data-start="3.4833" id="s11-c04" class="clip" src="captures/11_caballos.mp4"
+            data-beats="8 10" data-sync="2.0@8" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: scale(3)">
+          <video data-media-start="2.6" data-duration="0.4" data-start="4.3167" id="s11-c05" class="clip" src="captures/11_hud.mp4"
+            data-beats="10 11" data-sync="2.6@10" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-828px, -660px) scale(2)">
+          <video data-media-start="3" data-duration="0.4" data-start="4.7167" id="s11-c06" class="clip" src="captures/06_slots.mp4"
+            data-beats="11 12" data-sync="3.0@11" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-120px, -840px) scale(2)">
+          <video data-media-start="7" data-duration="0.4" data-start="5.1167" id="s11-c07" class="clip" src="captures/07_ruleta.mp4"
+            data-beats="12 13" data-sync="7.0@12" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+          <video data-media-start="3.2" data-duration="0.4" data-start="5.5167" id="s11-c08" class="clip" src="captures/11_hud.mp4"
+            data-beats="13 14" data-sync="3.2@13" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-510px, -1080px) scale(2)">
+          <video data-media-start="2.45" data-duration="0.3833" data-start="5.9167" id="s11-c09" class="clip" src="captures/07_blackjack.mp4"
+            data-beats="14 15" data-sync="2.45@14" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <video data-media-start="3.6" data-duration="0.3833" data-start="6.3" id="s11-c10" class="clip" src="captures/11_caballos.mp4"
+            data-beats="15 16" data-sync="3.6@15" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-828px, -660px) scale(2)">
+          <video data-media-start="8.1" data-duration="0.3833" data-start="6.6833" id="s11-c11" class="clip" src="captures/06_slots.mp4"
+            data-beats="16 17" data-sync="8.1@16" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+          <video data-media-start="4" data-duration="0.3833" data-start="7.0667" id="s11-c12" class="clip" src="captures/11_hud.mp4"
+            data-beats="17 18" data-sync="4.0@17" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-120px, -840px) scale(2)">
+          <video data-media-start="11.55" data-duration="0.3667" data-start="7.45" id="s11-c13" class="clip" src="captures/07_ruleta.mp4"
+            data-beats="18 19" data-sync="11.55@18" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <video data-media-start="4" data-duration="0.3833" data-start="7.8167" id="s11-c14" class="clip" src="captures/11_caballos.mp4"
+            data-beats="19 20" data-sync="4.0@19" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+          <video data-media-start="5.65" data-duration="0.3667" data-start="8.2" id="s11-c15" class="clip" src="captures/11_hud.mp4"
+            data-beats="20 21" data-sync="5.65@20" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-828px, -660px) scale(2)">
+          <video data-media-start="4.95" data-duration="0.3667" data-start="8.5667" id="s11-c16" class="clip" src="captures/15_palanca.mp4"
+            data-beats="21 22" data-sync="4.95@21" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-510px, -1080px) scale(2)">
+          <video data-media-start="3.4" data-duration="0.3667" data-start="8.9333" id="s11-c17" class="clip" src="captures/07_blackjack.mp4"
+            data-beats="22 23" data-sync="3.4@22" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: scale(3)">
+          <video data-media-start="6.5" data-duration="0.35" data-start="9.3" id="s11-c18" class="clip" src="captures/11_hud.mp4"
+            data-beats="23 end" data-sync="6.5@23" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div id="s11-pase"></div>
+      <div class="t c4" id="s11-uno" data-t="line">Una más.</div>
+      <div class="t c5" id="s11-dos" data-t="line">Una más.</div>
+      <div class="t c6 red" id="s11-tres" data-t="line">Una más.</div>
+
+      <audio data-media-start="0.45" data-duration="0.9" data-start="0" id="s11-a00" src="captures/06_slots.wav" data-beats="0 2" data-sync="0.45@0"
+        data-volume="0.33" data-track-index="10"></audio>
+      <audio data-media-start="3" data-duration="0.8833" data-start="0.9" id="s11-a01" src="captures/07_ruleta.wav" data-beats="2 4" data-sync="3.0@2"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio data-media-start="1.55" data-duration="0.8667" data-start="1.7833" id="s11-a02" src="captures/11_hud.wav" data-beats="4 6" data-sync="1.55@4"
+        data-volume="0.24" data-track-index="12"></audio>
+      <audio data-media-start="0.6" data-duration="0.8333" data-start="2.65" id="s11-a03" src="captures/07_blackjack.wav" data-beats="6 8" data-sync="0.6@6"
+        data-volume="0.36" data-track-index="10"></audio>
+      <audio data-media-start="2" data-duration="0.8333" data-start="3.4833" id="s11-a04" src="captures/11_caballos.wav" data-beats="8 10" data-sync="2.0@8"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio data-media-start="2.6" data-duration="0.4" data-start="4.3167" id="s11-a05" src="captures/11_hud.wav" data-beats="10 11" data-sync="2.6@10"
+        data-volume="0.24" data-track-index="12"></audio>
+      <audio data-media-start="3" data-duration="0.4" data-start="4.7167" id="s11-a06" src="captures/06_slots.wav" data-beats="11 12" data-sync="3.0@11"
+        data-volume="0.30" data-track-index="10"></audio>
+      <audio data-media-start="7" data-duration="0.4" data-start="5.1167" id="s11-a07" src="captures/07_ruleta.wav" data-beats="12 13" data-sync="7.0@12"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio data-media-start="3.2" data-duration="0.4" data-start="5.5167" id="s11-a08" src="captures/11_hud.wav" data-beats="13 14" data-sync="3.2@13"
+        data-volume="0.24" data-track-index="12"></audio>
+      <audio data-media-start="2.45" data-duration="0.3833" data-start="5.9167" id="s11-a09" src="captures/07_blackjack.wav" data-beats="14 15" data-sync="2.45@14"
+        data-volume="0.36" data-track-index="10"></audio>
+      <audio data-media-start="3.6" data-duration="0.3833" data-start="6.3" id="s11-a10" src="captures/11_caballos.wav" data-beats="15 16" data-sync="3.6@15"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio data-media-start="8.1" data-duration="0.3833" data-start="6.6833" id="s11-a11" src="captures/06_slots.wav" data-beats="16 17" data-sync="8.1@16"
+        data-volume="0.33" data-track-index="12"></audio>
+      <audio data-media-start="4" data-duration="0.3833" data-start="7.0667" id="s11-a12" src="captures/11_hud.wav" data-beats="17 18" data-sync="4.0@17"
+        data-volume="0.24" data-track-index="10"></audio>
+      <audio data-media-start="11.55" data-duration="0.3667" data-start="7.45" id="s11-a13" src="captures/07_ruleta.wav" data-beats="18 19" data-sync="11.55@18"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio data-media-start="4" data-duration="0.3833" data-start="7.8167" id="s11-a14" src="captures/11_caballos.wav" data-beats="19 20" data-sync="4.0@19"
+        data-volume="0.30" data-track-index="12"></audio>
+      <audio data-media-start="5.65" data-duration="0.3667" data-start="8.2" id="s11-a15" src="captures/11_hud.wav" data-beats="20 21" data-sync="5.65@20"
+        data-volume="0.24" data-track-index="10"></audio>
+      <audio data-media-start="4.95" data-duration="0.3667" data-start="8.5667" id="s11-a16" src="captures/15_palanca.wav" data-beats="21 22" data-sync="4.95@21"
+        data-volume="0.36" data-track-index="11"></audio>
+      <audio data-media-start="3.4" data-duration="0.3667" data-start="8.9333" id="s11-a17" src="captures/07_blackjack.wav" data-beats="22 23" data-sync="3.4@22"
+        data-volume="0.36" data-track-index="12"></audio>
+      <audio data-media-start="6.5" data-duration="0.35" data-start="9.3" id="s11-a18" src="captures/11_hud.wav" data-beats="23 end" data-sync="6.5@23"
+        data-volume="0.24" data-track-index="10"></audio>
+    </div>
+
+    <script>
+      // Todo dentro de una funcion: en el index.html del trailer completo las 16 escenas
+      // comparten pagina, y cada una tiene que quedarse con lo suyo.
+      (function () {
+        const SCENE = "11-montaje";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("s11-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          T.reelPass(tl, document.getElementById("s11-pase"), "out", 0, 0.2);
+          // Tres veces, cada una mas grande y mas abajo, a golpe: tiempos 6, 12 y 18.
+          [["#s11-uno", 6, 10, 336], ["#s11-dos", 12, 16, 450], ["#s11-tres", 18, 24, 570]]
+            .forEach(function (item) {
+              const el = document.querySelector(item[0]);
+              el.style.top = item[3] + "px";
+              T.center(el, 960);
+              T.slam(tl, el, T.beat(SCENE, item[1]));
+              T.jolt(tl, el, T.beat(SCENE, item[1]), 2);
+              if (item[2] < 24) T.hide(tl, el, T.beat(SCENE, item[2]));
+            });
+          window.__timelines["s11"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

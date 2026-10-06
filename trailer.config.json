@@ -1,0 +1,11 @@
+{
+  "gameRepo": "../just-one-more-bet",
+  "fps": 60,
+  "hyperframes": "hyperframes@0.8.136",
+  "sceneCrf": 0,
+  "finalCrf": 14,
+  "targetLufs": -16,
+  "truePeakDb": -2.5,
+  "musicGainDb": 0,
+  "sfxGainDb": 0
+}

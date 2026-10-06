@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+  05 · Dentro (acto 2 arranca: 92). Las bandas de cine se recogen en escalones: el casino
+  ocupa la pantalla entera. El HUD de verdad, reaccionando: DIA 1, el reloj de 150 s que
+  empieza a bajar al cruzar la puerta, las tres acciones y el dinero.
+  Corte 1: plano general, ella entra al salon. Tiempo 4: x3 sobre el reloj. Tiempo 6: x3
+  sobre las acciones y el dinero. Mismo clip, el tiempo sigue corriendo entre cortes.
+-->
+<html
+  lang="es"
+  data-composition-variables='[{"id":"lang","type":"enum","label":"Idioma","default":"es","options":[{"value":"es","label":"Español"},{"value":"en","label":"English"}]}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>05 · El HUD</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="shared/js/cues.js"></script>
+    <script src="shared/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="s05-root"
+      data-composition-id="s05"
+      data-start="0"
+      data-duration="5.216667"
+      data-width="1920"
+      data-height="1080"
+      data-fps="60"
+    >
+      <div class="shot">
+        <video data-media-start="0" data-duration="2.6" data-start="0" id="s05-general" class="clip" src="captures/05_hud.mp4"
+          data-beats="0 4" data-sync="0@0" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: scale(3)">
+          <video data-media-start="2.6" data-duration="1.3" data-start="2.6" id="s05-reloj" class="clip" src="captures/05_hud.mp4"
+          data-beats="4 6" data-sync="0@0" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+          <video data-media-start="3.9" data-duration="1.3167" data-start="3.9" id="s05-acciones" class="clip" src="captures/05_hud.mp4"
+          data-beats="6 end" data-sync="0@0" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="bar top" id="s05-arriba"></div>
+      <div class="bar bottom" id="s05-abajo"></div>
+
+      <audio data-media-start="0" data-duration="5.2167" data-start="0" id="s05-sonido" src="captures/05_hud.wav" data-beats="0 end" data-sync="0@0"
+        data-volume="0.72" data-track-index="10"></audio>
+    </div>
+
+    <script>
+      // Todo dentro de una funcion: en el index.html del trailer completo las 16 escenas
+      // comparten pagina, y cada una tiene que quedarse con lo suyo.
+      (function () {
+        const SCENE = "05-hud";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("s05-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          // Las bandas se recogen en cuatro escalones de 30 px: se abre el casino.
+          tl.fromTo(["#s05-arriba", "#s05-abajo"], { height: 120 },
+            { height: 0, duration: 0.2, ease: "steps(4)" }, 0.05);
+          window.__timelines["s05"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<!--
+  04 · El parqueo del casino (acto 1, 84). Si7b5 y Mi7b9: la dominante, que pide entrar.
+  La fachada del leon y ella que sube por la alfombra y se mete en la boca. Las reglas del
+  juego se escriben en las bandas de cine: arriba los 150 segundos y las 3 apuestas, abajo la
+  deuda (la cifra REAL de balance_config.tres, initial_loan_principal), que cae en rojo.
+  Al final, el empujon hacia la boca del leon: zoom ENTERO en escalones (x2, x3, x4, x6) a
+  golpe de corchea, hasta negro. Es la transicion al acto 2.
+  El murmullo del casino crece desde que ella se acerca a la puerta.
+-->
+<html
+  lang="es"
+  data-composition-variables='[{"id":"lang","type":"enum","label":"Idioma","default":"es","options":[{"value":"es","label":"Español"},{"value":"en","label":"English"}]}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>04 · El parqueo</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="shared/js/cues.js"></script>
+    <script src="shared/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="s04-root"
+      data-composition-id="s04"
+      data-start="0"
+      data-duration="5.716667"
+      data-width="1920"
+      data-height="1080"
+      data-fps="60"
+    >
+      <div class="shot">
+        <div class="zoom" id="s04-zoom">
+          <video id="s04-fachada" class="clip" src="captures/04_parqueo.mp4"
+            data-start="0" data-duration="5.716667" data-media-start="0" data-track-index="0"
+            muted playsinline></video>
+        </div>
+      </div>
+      <div class="black" id="s04-negro"></div>
+      <div class="bar top"></div>
+      <div class="bar bottom"></div>
+      <div class="t" id="s04-arriba"><span data-t="l1">150 segundos al día.</span><span>&#160;&#160;</span><span data-t="l2">3 apuestas.</span></div>
+      <div class="t" id="s04-abajo"><span data-t="l3">Una deuda de</span><span>&#160;</span><span class="red" data-t="debt">₡88.888.000</span><span>.</span></div>
+
+      <audio id="s04-murmullo" src="sfx/casino_ambience.mp3" data-start="1.8"
+        data-duration="3.916667" data-media-start="20" data-volume="0.5" data-track-index="10"
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":2.4,"v":0.45},{"t":3.9,"v":1}]}]}'></audio>
+      <audio data-start="4.2833" id="s04-aire" src="sfx/whoosh.wav" data-beats="6" data-duration="0.55"
+        data-volume="0.5" data-track-index="11"></audio>
+    </div>
+
+    <script>
+      // Todo dentro de una funcion: en el index.html del trailer completo las 16 escenas
+      // comparten pagina, y cada una tiene que quedarse con lo suyo.
+      (function () {
+        const SCENE = "04-parqueo";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("s04-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          const top = document.getElementById("s04-arriba");
+          const bottom = document.getElementById("s04-abajo");
+          top.style.top = "24px";
+          bottom.style.top = "984px";
+          T.center(top, 960);
+          T.center(bottom, 960);
+          const parts = top.querySelectorAll("span");
+          T.type(tl, parts[0], T.beat(SCENE, 1), 30);
+          T.slam(tl, parts[1], T.beat(SCENE, 2.5));
+          T.type(tl, parts[2], T.beat(SCENE, 2.5), 30);
+          const low = bottom.querySelectorAll("span");
+          const end = T.type(tl, low[0], T.beat(SCENE, 4), 30);
+          T.slam(tl, low[1], end);
+          // La cifra cae entera en el tiempo 5, con su sacudida.
+          T.slam(tl, low[2], T.beat(SCENE, 5));
+          T.slam(tl, low[3], T.beat(SCENE, 5));
+          T.jolt(tl, bottom, T.beat(SCENE, 5), 2);
+
+          // El empujon a la boca del leon: escalones enteros, a golpe de corchea.
+          const P = { x: 960, y: 720 };
+          const zoom = document.getElementById("s04-zoom");
+          [[6, 2], [6.5, 3], [7, 4], [7.5, 6]].forEach(function (step) {
+            const s = step[1];
+            tl.set(zoom, { scale: s, x: Math.round(P.x * (1 - s)), y: Math.round(P.y * (1 - s)) },
+              T.beat(SCENE, step[0]));
+          });
+          tl.set("#s04-negro", { opacity: 0 }, 0);
+          tl.set("#s04-negro", { opacity: 1 }, T.beat(SCENE, 7.75));
+          window.__timelines["s04"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

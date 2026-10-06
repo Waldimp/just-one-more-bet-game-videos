@@ -1,0 +1,17 @@
+{
+  "name": "just-one-more-bet-trailer",
+  "private": true,
+  "type": "module",
+  "description": "Trailer de Just One More Bet: una composicion de HyperFrames por escena, textos por idioma y montaje con ffmpeg.",
+  "scripts": {
+    "capture": "node tools/capture.mjs",
+    "music": "node tools/music.mjs",
+    "sync": "node tools/sync.mjs",
+    "render": "node tools/render.mjs",
+    "render-all": "node tools/render.mjs all",
+    "assemble": "node tools/assemble.mjs",
+    "preview": "npx --yes hyperframes@0.8.136 preview",
+    "check": "npx --yes hyperframes@0.8.136 check",
+    "lint": "npx --yes hyperframes@0.8.136 lint"
+  }
+}

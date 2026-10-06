@@ -1,0 +1,56 @@
+{
+  "_nota": "Textos del trailer en espanol. Cambia aqui una frase y vuelve a renderizar SOLO su escena: npm run render -- <escena> es",
+  "01-carcel": {
+    "line": "Saliste de la cárcel."
+  },
+  "02-calle": {
+    "line": "Nadie te contrata."
+  },
+  "03-callejon": {
+    "line1": "Pero alguien ",
+    "line2": "sí te presta."
+  },
+  "04-parqueo": {
+    "l1": "150 segundos al día.",
+    "l2": "3 apuestas.",
+    "l3": "Una deuda de",
+    "debt": "₡88.888.000"
+  },
+  "06-tragamonedas": {
+    "line": "Ganar se siente bien."
+  },
+  "07-ruleta": {
+    "l1": "Perder…",
+    "l2": "también se",
+    "l3": "olvida rápido."
+  },
+  "08-tomar-aire": {
+    "l1": "(Es tabaco.",
+    "l2": "Probablemente.)"
+  },
+  "09-barra": {
+    "caption": ""
+  },
+  "10-brujo": {
+    "l1": "Te vende suerte.",
+    "l2": "O eso dice."
+  },
+  "11-montaje": {
+    "line": "Una más."
+  },
+  "13-cobrador": {
+    "line": "Él siempre llega."
+  },
+  "15-solo-una-mas": {
+    "line": "Solo una más."
+  },
+  "16-logo": {
+    "title1": "JUST ONE",
+    "title2": "MORE BET",
+    "available": "Ya en itch.io",
+    "url": "just-one-more-bet-web.vercel.app",
+    "legal": "Contiene apuestas simuladas. Sin dinero real. +18.",
+    "debt_label": "DEUDA",
+    "thousands": "."
+  }
+}

@@ -1,0 +1,253 @@
+/*
+ * Sistema visual del trailer (ver frame.md).
+ *
+ * Rejilla: 1 pixel del juego = 3 px de video (640x360 a x3 = 1920x1080). Todo lo que se
+ * dibuja aqui —bordes, sombras, rellenos, posiciones— va en multiplos de 3 px para caer en la
+ * misma rejilla que el arte.
+ *
+ * Fuente: Geist Pixel Trailer (Geist Pixel fija en Regular, con el colon). Su celda es 38/1000
+ * del cuerpo; para que cada celda mida N px exactos, font-size = N / 0.038. El @font-face va
+ * en cada escena (ruta desde la raiz del proyecto, que es como sirve HyperFrames).
+ */
+
+:root {
+  --ink: #06080d;
+  --ui: #1a1921;
+  --ui-edge: #9b8a4b;
+  --cream: #f0e8d4;
+  --gold: #d9c773;
+  --red: #dd292d;
+  --wine: #571c27;
+  /* Tamanos por celda de la fuente. */
+  --cell2: 52.631579px;
+  --cell3: 78.947368px;
+  --cell4: 105.263158px;
+  --cell5: 131.578947px;
+  --cell6: 157.894737px;
+  /* Contorno de un pixel de juego (3 px) en las ocho direcciones, sin desenfoque. */
+  --outline: 3px 0 0 var(--ink), -3px 0 0 var(--ink), 0 3px 0 var(--ink), 0 -3px 0 var(--ink),
+    3px 3px 0 var(--ink), -3px 3px 0 var(--ink), 3px -3px 0 var(--ink), -3px -3px 0 var(--ink);
+  --outline-drop: 3px 0 0 var(--ink), -3px 0 0 var(--ink), 0 3px 0 var(--ink),
+    0 -3px 0 var(--ink), 3px 3px 0 var(--ink), -3px 3px 0 var(--ink), 3px -3px 0 var(--ink),
+    -3px -3px 0 var(--ink), 6px 6px 0 var(--ink), 3px 6px 0 var(--ink), 6px 3px 0 var(--ink);
+  /* Contorno de DOS pixeles de juego (6 px) para los textos grandes sobre imagen cargada, con
+     su sombra dura de otros dos. Sin huecos: tambien las posiciones intermedias de 3 px. */
+  --outline-heavy: 6px 0 0 var(--ink), -6px 0 0 var(--ink), 0 6px 0 var(--ink),
+    0 -6px 0 var(--ink), 6px 6px 0 var(--ink), -6px 6px 0 var(--ink), 6px -6px 0 var(--ink),
+    -6px -6px 0 var(--ink), 3px 6px 0 var(--ink), -3px 6px 0 var(--ink), 3px -6px 0 var(--ink),
+    -3px -6px 0 var(--ink), 6px 3px 0 var(--ink), -6px 3px 0 var(--ink), 6px -3px 0 var(--ink),
+    -6px -3px 0 var(--ink), 12px 12px 0 var(--ink), 9px 12px 0 var(--ink), 12px 9px 0 var(--ink);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+/* La raiz de cada escena (y la del trailer completo). */
+[data-composition-id] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--ink);
+  font-family: "Geist Pixel Trailer", monospace;
+  color: var(--cream);
+  -webkit-font-smoothing: none;
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
+}
+
+/* --- Imagen del juego ----------------------------------------------------------------- */
+
+/* Un plano del juego: ocupa el cuadro entero, a 1:1 (los clips ya vienen a 1920x1080). */
+.shot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+/* Marco de zoom ENTERO. El video se escala con vecino mas cercano: a x2 o x3 cada pixel del
+   juego sigue siendo un bloque exacto. `transform-origin` en 0 0 y el desplazamiento en
+   multiplos de 3: asi el recorte cae en la rejilla. */
+.zoom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+}
+
+.shot video,
+.zoom video,
+img.pixel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  image-rendering: pixelated;
+}
+
+img.pixel {
+  width: auto;
+  height: auto;
+}
+
+/* --- Bandas de cine (acto 1 y acto 3) -------------------------------------------------- */
+
+.bar {
+  position: absolute;
+  left: 0;
+  width: 1920px;
+  height: 120px;
+  background: var(--ink);
+}
+
+.bar.top {
+  top: 0;
+}
+
+.bar.bottom {
+  bottom: 0;
+}
+
+/* --- Texto ---------------------------------------------------------------------------- */
+
+.t {
+  position: absolute;
+  font-family: "Geist Pixel Trailer", monospace;
+  font-size: var(--cell3);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--cream);
+  text-shadow: var(--outline);
+  font-variant-ligatures: none;
+}
+
+.t.c2 {
+  font-size: var(--cell2);
+  text-shadow: none;
+}
+
+.t.c4 {
+  font-size: var(--cell4);
+  text-shadow: var(--outline-drop);
+}
+
+.t.c5 {
+  font-size: var(--cell5);
+  text-shadow: var(--outline-heavy);
+}
+
+.t.c6 {
+  font-size: var(--cell6);
+  text-shadow: var(--outline-heavy);
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.red {
+  color: var(--red);
+}
+
+/* Subtitulo de cine, centrado en la banda de abajo: la banda mide 120 px y la letra 57 de
+   mayuscula, asi que la linea base cae a 30 px del borde. */
+.subtitle {
+  left: 0;
+  width: 1920px;
+  text-align: center;
+  bottom: 30px;
+}
+
+/* Caja de interfaz del juego: el mismo panel oscuro con filo dorado que los botones del HUD,
+   con la sombra dura de un pixel. Acto 2. */
+.uibox {
+  position: absolute;
+  padding: 24px 33px 21px;
+  background: var(--ui);
+  border: 3px solid var(--ui-edge);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.uibox .t {
+  position: relative;
+  text-shadow: none;
+}
+
+.uibox .line + .line {
+  margin-top: 18px;
+}
+
+/* Cada letra de un texto a maquina: aparece de golpe, sin fundido. Con opacidad y no con
+   `visibility`: un hijo con `visibility: visible` se veria aunque HyperFrames ocultara su
+   escena, y en el trailer completo (index.html) las letras se quedarian encima de las demas. */
+.ch {
+  opacity: 0;
+}
+
+/* --- Pase de carrete ------------------------------------------------------------------- */
+
+.reelpass {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  pointer-events: none;
+}
+
+.reelpass .col {
+  position: relative;
+  flex: 1 1 0;
+  height: 1080px;
+  overflow: hidden;
+  background: #dfe5f0;
+  border-left: 6px solid #2a2433;
+  border-right: 6px solid #2a2433;
+}
+
+.reelpass .strip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.reelpass .strip img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  image-rendering: pixelated;
+}
+
+/* --- Negro y destellos ---------------------------------------------------------------- */
+
+.black {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+}
+
+.flash {
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+}
+

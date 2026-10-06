@@ -1,0 +1,56 @@
+{
+  "_nota": "English trailer copy. Change a line here and re-render ONLY its scene: npm run render -- <scene> en",
+  "01-carcel": {
+    "line": "You got out of prison."
+  },
+  "02-calle": {
+    "line": "Nobody's hiring."
+  },
+  "03-callejon": {
+    "line1": "But somebody's ",
+    "line2": "always lending."
+  },
+  "04-parqueo": {
+    "l1": "150 seconds a day.",
+    "l2": "3 bets.",
+    "l3": "A debt of",
+    "debt": "₡88,888,000"
+  },
+  "06-tragamonedas": {
+    "line": "Winning feels good."
+  },
+  "07-ruleta": {
+    "l1": "Losing…",
+    "l2": "is just as easy",
+    "l3": "to forget."
+  },
+  "08-tomar-aire": {
+    "l1": "(It's tobacco.",
+    "l2": "Probably.)"
+  },
+  "09-barra": {
+    "caption": "DRUNK MODE: wins and losses ×1.25."
+  },
+  "10-brujo": {
+    "l1": "He sells you luck.",
+    "l2": "Or so he says."
+  },
+  "11-montaje": {
+    "line": "One more."
+  },
+  "13-cobrador": {
+    "line": "He always shows up."
+  },
+  "15-solo-una-mas": {
+    "line": "Just one more."
+  },
+  "16-logo": {
+    "title1": "JUST ONE",
+    "title2": "MORE BET",
+    "available": "Out now on itch.io",
+    "url": "just-one-more-bet-web.vercel.app",
+    "legal": "Contains simulated gambling. No real money. 18+.",
+    "debt_label": "DEBT",
+    "thousands": ","
+  }
+}

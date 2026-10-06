@@ -1,0 +1,90 @@
+<!doctype html>
+<!--
+  01 · La carcel (acto 1, 84 negras por minuto).
+  Negro, la reja se abre y ella sale con su bolsa. El jazz entra en el primer tiempo
+  (1,14 s), que es cuando asoma por el vano: el clip de captura esta desplazado para eso.
+  Texto: la banda de abajo, a maquina, desde el primer tiempo.
+-->
+<html
+  lang="es"
+  data-composition-variables='[{"id":"lang","type":"enum","label":"Idioma","default":"es","options":[{"value":"es","label":"Español"},{"value":"en","label":"English"}]}]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>01 · La cárcel</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="shared/js/cues.js"></script>
+    <script src="shared/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="s01-root"
+      data-composition-id="s01"
+      data-start="0"
+      data-duration="4"
+      data-width="1920"
+      data-height="1080"
+      data-fps="60"
+    >
+      <div class="shot">
+        <video
+          id="s01-carcel"
+          class="clip"
+          src="captures/01_carcel.mp4"
+          data-start="0"
+          data-duration="4"
+          data-media-start="0"
+          data-track-index="0"
+          muted
+          playsinline
+        ></video>
+      </div>
+      <div class="black" id="s01-negro"></div>
+      <div class="bar top"></div>
+      <div class="bar bottom"></div>
+      <div class="t" id="s01-texto" data-t="line">Saliste de la cárcel.</div>
+
+      <audio
+        id="s01-reja"
+        src="sfx/gate.wav"
+        data-start="0"
+        data-duration="3.5"
+        data-volume="0.7"
+        data-track-index="10"
+      ></audio>
+    </div>
+
+    <script>
+      // Todo dentro de una funcion: en el index.html del trailer completo las 16 escenas
+      // comparten pagina, y cada una tiene que quedarse con lo suyo.
+      (function () {
+        const SCENE = "01-carcel";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("s01-root");
+        document.fonts.ready.then(function () {
+          TRAILER.fill(SCENE, ROOT);
+          const text = document.getElementById("s01-texto");
+          // En la banda de abajo: linea base a 30 px del borde, centrada en la rejilla.
+          text.style.top = "984px";
+          TRAILER.center(text, 960);
+
+          // Negro, y la reja se ve abrirse: fundido de paleta en cuatro escalones.
+          TRAILER.stepFade(tl, "#s01-negro", 1, 0, 0.2, 0.36, 4);
+          // El texto entra con el jazz, en el primer tiempo.
+          TRAILER.type(tl, text, TRAILER.beat(SCENE, 0), 28);
+
+          window.__timelines["s01"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>
