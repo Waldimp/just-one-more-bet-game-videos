@@ -14,3 +14,11 @@ shared/js/texts.js
 /index.html
 
 *.log
+
+# Teaser vertical de Instagram (teaser-ig/): lo pesado o regenerable, como el trailer.
+/teaser-ig/captures/
+/teaser-ig/audio/
+/teaser-ig/renders/
+/teaser-ig/review/
+/teaser-ig/js/
+/teaser-ig/index.html

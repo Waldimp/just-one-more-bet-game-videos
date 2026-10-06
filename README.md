@@ -1,5 +1,7 @@
 # Tráiler de Just One More Bet
 
+(Y el teaser vertical de Instagram: ver [Teaser vertical de Instagram](#teaser-vertical-de-instagram-teaser-ig).)
+
 Proyecto editable del tráiler (~86 s, 1920×1080, 60 fps, español e inglés), hecho con
 **HyperFrames** (vídeo desde HTML) sobre clips del juego grabados con el **Movie Maker de
 Godot**. Una composición por escena: cambiar un texto o una escena obliga a renderizar **solo
@@ -133,6 +135,61 @@ Si cambian compases o tempos, cambian las duraciones: hay que renderizar las esc
   recorte buscado, no un error.
 - Los niveles del sonido del juego en cada escena (`data-volume` de los `<audio>` que leen
   `captures/*.wav`) están bajados para que la música mande: el golpe del logo es lo más fuerte.
+
+## Teaser vertical de Instagram (`teaser-ig/`)
+
+Un teaser de **24 s** (23,95) para las **historias de Instagram**: 1080×1920, 60 fps, español con
+voseo. Es una pieza aparte, con su carpeta, su configuración y sus scripts (`npm run teaser:*`):
+el tráiler no cambia (sus escenas, su hoja de cortes y `out/trailer_*.mp4` siguen igual).
+Guion plano a plano en `teaser-ig/GUION.md`; el encargo, en `teaser-ig/BRIEF.md`.
+
+Entregable: `out/teaser_ig_es.mp4` (H.264 yuv420p, AAC 320 kb/s, −16 LUFS, picos por debajo de
+−1 dBFS), copiado con su portada a `entregables/teaser-instagram/`.
+
+```
+teaser-ig/
+  GUION.md, BRIEF.md       el guion (tabla de planos) y el encargo
+  teaser.config.json       duracion de cada plano (en fotogramas) y de que tramo de la musica
+                           del trailer sale su musica; sonoridad; rutas de salida
+  scenes/NN-nombre/        una composicion por plano (01-apuestas ... 06-cierre)
+  texts/es.json            los textos
+  css/teaser.css           lo que cambia del sistema visual para 1080x1920 (el resto: shared/)
+  img/fachada_vertical.png la fachada del leon en vertical (fondo del cierre)
+  tools/                   capture, music, prepare, render, assemble
+  captures/ audio/ renders/ review/ js/ index.html     generados              [ignorado]
+```
+
+```bash
+npm run teaser:capture -- all     # graba los planos verticales (abre Godot; ~5 min)
+npm run teaser:music              # remonta la musica del trailer (necesita `npm run music`)
+npm run teaser:render-all         # renderiza los 6 planos (~4 min)
+npm run teaser:render -- 02       # o uno solo ("02", "02-deuda" o "deuda")
+npm run teaser:assemble           # monta out/teaser_ig_es.mp4 y deja la revision
+npm run teaser:assemble -- --entregar   # ademas lo copia (con la portada) a entregables/
+```
+
+- **Vertical nativo.** Los planos se graban con la composición de móvil del juego (viewport
+  360×640, HUD en tarjeta, closeups con su maquetación vertical), que a ×3 da 1080×1920 píxel a
+  píxel. Los define `tools/trailer/teaser_shots.gd` del repo del juego, con los mismos
+  directores que el tráiler. Movie Maker graba siempre al tamaño base del proyecto (640×360),
+  así que en los planos verticales la escena de captura guarda ella misma cada fotograma del
+  viewport (`portrait%08d.png`) y Movie Maker pone el `delta` fijo y el sonido.
+- **Zonas de Instagram.** La cabecera de la historia tapa ~250 px arriba y la barra de
+  respuesta ~350 px abajo: el texto va entre y = 250 y y = 1570. La tarjeta del HUD a ×6 se baja
+  252 px. El cierre deja libre la franja **y 1110–1404** para el sticker del link.
+- **Música.** Remontaje de `audio/trailer_music.wav`, sin componer nada: el montaje entero
+  (132→168), silencio con el murmullo del casino, el pedal del cobrador, el final del platillo al
+  revés de la palanca y el golpe del logo (`teaser.config.json > sections`).
+- **Cortes a golpe.** Las escenas usan la misma sintaxis que el tráiler (`data-beats`,
+  `data-sync`); `teaser:prepare` (lo llaman render y assemble) la convierte con los tiempos de
+  `teaser-ig/audio/teaser_cues.json`.
+- **Revisión** (`teaser-ig/review/`): `teaser_hoja.png` (9 fotogramas), `teaser_zonas_seguras.png`
+  (el último fotograma con las zonas de Instagram encima), `teaser_portada.png` y una hoja por
+  escena. `assemble` comprueba además que el hueco del sticker quede limpio (idéntico antes y
+  después de que salgan los textos del cierre) y falla si no.
+- **Validación.** `hyperframes check` sobre `teaser-ig/index.html` (en una copia cuya raíz sea
+  ese archivo) pasa sin errores. Quedan avisos de contraste del título dorado sobre el león:
+  el comprobador no cuenta el contorno de tinta del texto, que es lo que lo hace legible.
 
 ## Licencias
 

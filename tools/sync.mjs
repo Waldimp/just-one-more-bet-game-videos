@@ -81,8 +81,9 @@ export function sync({ quiet = false } = {}) {
  *   "2-0.5s"             medio segundo antes del tiempo 2 (vale en los dos atributos)
  *
  * Reescribe `data-start`, `data-duration` y `data-media-start`, redondeados al fotograma.
+ * Exportada: el teaser vertical (teaser-ig/tools/prepare.mjs) usa la misma sintaxis.
  */
-function syncBeats(html, cue, scene) {
+export function syncBeats(html, cue, scene) {
   if (!cue.beats) return html;
   const frame = (v) => Math.round(v * 60) / 60;
   const at = (raw) => {

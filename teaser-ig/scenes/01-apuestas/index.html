@@ -1,0 +1,241 @@
+<!doctype html>
+<!--
+  Teaser IG · 01 · Las apuestas (0:00-0:09,65). La musica es el montaje del trailer entero:
+  accelerando de 132 a 168 que acaba en la dominante y no resuelve.
+  Gancho en el primer fotograma: los carretes girando a x6 y "¿TE LA JUGAS?"; caen cinco
+  sietes y el cartel GANASTE con la lluvia de monedas (x3, el cuadro entero). Luego cortes cada
+  dos tiempos: la bola de la ruleta cae en el 2, el final de foto de los caballos (la
+  repeticion cenital cruzando la meta), el dinero que sube en la tarjeta del HUD ("GANAS.") y
+  la carta que se voltea y es un rey ("PERDES."). Despues cortes cada tiempo, cada vez mas
+  rapidos, con "UNA MAS." dos veces; la ultima en rojo hasta el corte en seco. Los rotulos
+  de abajo no van en rojo sobre la alfombra roja de las mesas: ahi no se leen.
+  Todo es el juego en vertical (360x640 a x3, la composicion de movil). Los zooms son x6
+  (scale(2) sobre el clip x3). La tarjeta del HUD a x6 se baja 252 px: arriba manda la
+  cabecera de la historia de Instagram. El gancho recorta los carretes por debajo del texto de
+  la barra de arriba de la maquina y deja la pared libre para "¿TE LA JUGAS?".
+  Cada corte: data-beats="desde hasta" (tiempos del montaje) y data-sync="segundo_fuente@tiempo".
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Teaser 01 · Las apuestas</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="teaser-ig/js/cues.js"></script>
+    <script src="teaser-ig/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <link rel="stylesheet" href="teaser-ig/css/teaser.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="t01-root"
+      data-composition-id="t01"
+      data-start="0"
+      data-duration="9.65"
+      data-width="1080"
+      data-height="1920"
+      data-fps="60"
+    >
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-408px, -324px) scale(2)">
+          <video data-media-start="0.55" data-duration="1.35" data-start="0" id="t01-c00" class="clip" src="teaser-ig/captures/ig_slots.mp4"
+            data-beats="0 3" data-sync="0.55@0" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <video data-media-start="1.9167" data-duration="0.4333" data-start="1.35" id="t01-c01" class="clip" src="teaser-ig/captures/ig_slots.mp4"
+            data-beats="3 4" data-sync="1.92@3" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <video data-media-start="11.2" data-duration="0.8667" data-start="1.7833" id="t01-c02" class="clip" src="teaser-ig/captures/ig_ruleta.mp4"
+            data-beats="4 6" data-sync="11.633@5" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-1080px, -1002px) scale(2)">
+          <video data-media-start="8.3167" data-duration="0.8333" data-start="2.65" id="t01-c03" class="clip" src="teaser-ig/captures/ig_caballos.mp4"
+            data-beats="6 8" data-sync="8.95@7.5" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(0px, 252px) scale(2)">
+          <video data-media-start="2" data-duration="0.8333" data-start="3.4833" id="t01-c04" class="clip" src="teaser-ig/captures/ig_hud.mp4"
+            data-beats="8 10" data-sync="2.1@8.25" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-360px, -720px) scale(2)">
+          <video data-media-start="2.0333" data-duration="0.8" data-start="4.3167" id="t01-c05" class="clip" src="teaser-ig/captures/ig_blackjack.mp4"
+            data-beats="10 12" data-sync="2.6@11.4" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <video data-media-start="2.7" data-duration="0.4" data-start="5.1167" id="t01-c06" class="clip" src="teaser-ig/captures/ig_slots.mp4"
+            data-beats="12 13" data-sync="2.7@12" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: scale(2)">
+          <video data-media-start="6" data-duration="0.4" data-start="5.5167" id="t01-c07" class="clip" src="teaser-ig/captures/ig_ruleta.mp4"
+            data-beats="13 14" data-sync="6.0@13" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(0px, 252px) scale(2)">
+          <video data-media-start="2.5" data-duration="0.3833" data-start="5.9167" id="t01-c08" class="clip" src="teaser-ig/captures/ig_hud.mp4"
+            data-beats="14 15" data-sync="2.55@14.15" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-1080px, -1002px) scale(2)">
+          <video data-media-start="4.15" data-duration="0.3833" data-start="6.3" id="t01-c09" class="clip" src="teaser-ig/captures/ig_caballos.mp4"
+            data-beats="15 16" data-sync="4.35@15.5" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-360px, -720px) scale(2)">
+          <video data-media-start="1" data-duration="0.3833" data-start="6.6833" id="t01-c10" class="clip" src="teaser-ig/captures/ig_blackjack.mp4"
+            data-beats="16 17" data-sync="1.0@16" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(0px, 252px) scale(2)">
+          <video data-media-start="3.3833" data-duration="0.3833" data-start="7.0667" id="t01-c11" class="clip" src="teaser-ig/captures/ig_hud.mp4"
+            data-beats="17 18" data-sync="3.45@17.15" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-408px, -480px) scale(2)">
+          <video data-media-start="1.95" data-duration="0.3667" data-start="7.45" id="t01-c12" class="clip" src="teaser-ig/captures/ig_palanca.mp4"
+            data-beats="18 19" data-sync="1.95@18" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <video data-media-start="11.1" data-duration="0.3833" data-start="7.8167" id="t01-c13" class="clip" src="teaser-ig/captures/ig_caballos.mp4"
+            data-beats="19 20" data-sync="11.1@19" data-track-index="0" muted playsinline></video>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(0px, 252px) scale(2)">
+          <video data-media-start="4.3" data-duration="0.3667" data-start="8.2" id="t01-c14" class="clip" src="teaser-ig/captures/ig_hud.mp4"
+            data-beats="20 21" data-sync="4.35@20.15" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-408px, -480px) scale(2)">
+          <video data-media-start="1.45" data-duration="0.3667" data-start="8.5667" id="t01-c15" class="clip" src="teaser-ig/captures/ig_slots.mp4"
+            data-beats="21 22" data-sync="1.45@21" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-660px, -480px) scale(2)">
+          <video data-media-start="1.5" data-duration="0.3667" data-start="8.9333" id="t01-c16" class="clip" src="teaser-ig/captures/ig_palanca.mp4"
+            data-beats="22 23" data-sync="1.6@22.3" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(0px, 252px) scale(2)">
+          <video data-media-start="4.9" data-duration="0.35" data-start="9.3" id="t01-c17" class="clip" src="teaser-ig/captures/ig_hud.mp4"
+            data-beats="23 end" data-sync="4.9@23" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+
+      <div class="t c6" id="t01-gancho1" data-t="hook1">¿TE LA</div>
+      <div class="t c6" id="t01-gancho2" data-t="hook2">JUGÁS?</div>
+      <div class="t c6 gold" id="t01-ganas" data-t="win">GANÁS.</div>
+      <div class="t c6" id="t01-pierdes" data-t="lose">PERDÉS.</div>
+      <div class="t c5" id="t01-una1" data-t="more">UNA MÁS.</div>
+      <div class="t c6 red" id="t01-una2" data-t="more">UNA MÁS.</div>
+
+      <!-- El gancho tambien suena: la palanca encima del primer tiempo de la musica. -->
+      <audio id="t01-palanca" src="sfx/lever.wav" data-start="0" data-duration="1.2"
+        data-volume="0.45" data-track-index="13"></audio>
+
+      <audio data-media-start="0.55" data-duration="1.35" data-start="0" id="t01-a00" src="teaser-ig/captures/ig_slots.wav" data-beats="0 3" data-sync="0.55@0"
+        data-volume="0.55" data-track-index="10"></audio>
+      <audio data-media-start="1.9167" data-duration="0.4333" data-start="1.35" id="t01-a01" src="teaser-ig/captures/ig_slots.wav" data-beats="3 4" data-sync="1.92@3"
+        data-volume="0.55" data-track-index="11"></audio>
+      <audio data-media-start="11.2" data-duration="0.8667" data-start="1.7833" id="t01-a02" src="teaser-ig/captures/ig_ruleta.wav" data-beats="4 6" data-sync="11.633@5"
+        data-volume="0.40" data-track-index="12"></audio>
+      <audio data-media-start="8.3167" data-duration="0.8333" data-start="2.65" id="t01-a03" src="teaser-ig/captures/ig_caballos.wav" data-beats="6 8" data-sync="8.95@7.5"
+        data-volume="0.40" data-track-index="10"></audio>
+      <audio data-media-start="2" data-duration="0.8333" data-start="3.4833" id="t01-a04" src="teaser-ig/captures/ig_hud.wav" data-beats="8 10" data-sync="2.1@8.25"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio data-media-start="2.0333" data-duration="0.8" data-start="4.3167" id="t01-a05" src="teaser-ig/captures/ig_blackjack.wav" data-beats="10 12" data-sync="2.6@11.4"
+        data-volume="0.45" data-track-index="12"></audio>
+      <audio data-media-start="2.7" data-duration="0.4" data-start="5.1167" id="t01-a06" src="teaser-ig/captures/ig_slots.wav" data-beats="12 13" data-sync="2.7@12"
+        data-volume="0.35" data-track-index="10"></audio>
+      <audio data-media-start="6" data-duration="0.4" data-start="5.5167" id="t01-a07" src="teaser-ig/captures/ig_ruleta.wav" data-beats="13 14" data-sync="6.0@13"
+        data-volume="0.30" data-track-index="11"></audio>
+      <audio data-media-start="2.5" data-duration="0.3833" data-start="5.9167" id="t01-a08" src="teaser-ig/captures/ig_hud.wav" data-beats="14 15" data-sync="2.55@14.15"
+        data-volume="0.30" data-track-index="12"></audio>
+      <audio data-media-start="4.15" data-duration="0.3833" data-start="6.3" id="t01-a09" src="teaser-ig/captures/ig_caballos.wav" data-beats="15 16" data-sync="4.35@15.5"
+        data-volume="0.35" data-track-index="10"></audio>
+      <audio data-media-start="1" data-duration="0.3833" data-start="6.6833" id="t01-a10" src="teaser-ig/captures/ig_blackjack.wav" data-beats="16 17" data-sync="1.0@16"
+        data-volume="0.40" data-track-index="11"></audio>
+      <audio data-media-start="3.3833" data-duration="0.3833" data-start="7.0667" id="t01-a11" src="teaser-ig/captures/ig_hud.wav" data-beats="17 18" data-sync="3.45@17.15"
+        data-volume="0.30" data-track-index="12"></audio>
+      <audio data-media-start="1.95" data-duration="0.3667" data-start="7.45" id="t01-a12" src="teaser-ig/captures/ig_palanca.wav" data-beats="18 19" data-sync="1.95@18"
+        data-volume="0.35" data-track-index="10"></audio>
+      <audio data-media-start="11.1" data-duration="0.3833" data-start="7.8167" id="t01-a13" src="teaser-ig/captures/ig_caballos.wav" data-beats="19 20" data-sync="11.1@19"
+        data-volume="0.35" data-track-index="11"></audio>
+      <audio data-media-start="4.3" data-duration="0.3667" data-start="8.2" id="t01-a14" src="teaser-ig/captures/ig_hud.wav" data-beats="20 21" data-sync="4.35@20.15"
+        data-volume="0.30" data-track-index="12"></audio>
+      <audio data-media-start="1.45" data-duration="0.3667" data-start="8.5667" id="t01-a15" src="teaser-ig/captures/ig_slots.wav" data-beats="21 22" data-sync="1.45@21"
+        data-volume="0.30" data-track-index="10"></audio>
+      <audio data-media-start="1.5" data-duration="0.3667" data-start="8.9333" id="t01-a16" src="teaser-ig/captures/ig_palanca.wav" data-beats="22 23" data-sync="1.6@22.3"
+        data-volume="0.40" data-track-index="11"></audio>
+      <audio data-media-start="4.9" data-duration="0.35" data-start="9.3" id="t01-a17" src="teaser-ig/captures/ig_hud.wav" data-beats="23 end" data-sync="4.9@23"
+        data-volume="0.30" data-track-index="12"></audio>
+    </div>
+
+    <script>
+      (function () {
+        const SCENE = "01-apuestas";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("t01-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          const at = function (i) { return T.beat(SCENE, i); };
+          // Lineas apiladas: la caja de cada letra mide 1,3 em y se pisa con la de la linea de
+          // arriba, aunque la tinta no se toque. Se marca como buscado para `hyperframes check`.
+          const stacked = function (el) {
+            T.split(el).forEach(function (ch) { ch.setAttribute("data-layout-allow-overlap", ""); });
+          };
+          stacked(document.getElementById("t01-gancho1"));
+          stacked(document.getElementById("t01-gancho2"));
+          // [id, top, desde, hasta (null = hasta el final), sacudida]. Los de abajo, bajo el
+          // boton TERMINAR DIA de la tarjeta del HUD a x6 y por encima de la barra de respuesta.
+          [
+            ["#t01-gancho1", 252, 0, 3, 3],
+            ["#t01-gancho2", 384, 0, 3, 3],
+            ["#t01-ganas", 1392, 8.25, 10, 2],
+            ["#t01-pierdes", 1392, 11.4, 12, 3],
+            ["#t01-una1", 1407, 14, 18, 2],
+            ["#t01-una2", 1392, 19, null, 3],
+          ].forEach(function (item) {
+            const el = document.querySelector(item[0]);
+            el.style.top = item[1] + "px";
+            T.center(el, 540);
+            if (item[2] === 0) {
+              // El gancho ya esta en el fotograma 0: visible de entrada, no por un `set` en el
+              // instante 0 (el render no lo pinta en el primer fotograma).
+              T.split(el).forEach(function (ch) { ch.style.opacity = "1"; });
+              if (item[4]) T.jolt(tl, el, 1 / 60, item[4]);
+            } else {
+              T.slam(tl, el, at(item[2]));
+              if (item[4]) T.jolt(tl, el, at(item[2]), item[4]);
+            }
+            if (item[3] !== null) T.hide(tl, el, at(item[3]));
+          });
+          window.__timelines["t01"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

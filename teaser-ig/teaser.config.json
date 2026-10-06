@@ -1,0 +1,21 @@
+{
+  "_nota": "Teaser vertical de Instagram. La musica es un remontaje de audio/trailer_music.wav: cada plano dice de que plano del trailer sale su musica (`from`), desde que segundo de ese plano (`offset`, o `tail` para coger los ultimos segundos) y cuantos fotogramas dura. Sin `from`, silencio. Ver teaser-ig/GUION.md.",
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "sceneCrf": 0,
+  "finalCrf": 14,
+  "targetLufs": -16,
+  "truePeakDb": -2.5,
+  "output": "out/teaser_ig_es.mp4",
+  "deliverables": "entregables/teaser-instagram",
+  "lang": "es",
+  "sections": [
+    { "id": "01-apuestas", "from": "11-montaje", "offset": 0, "frames": 579 },
+    { "id": "02-deuda", "frames": 105 },
+    { "id": "03-reloj", "frames": 99 },
+    { "id": "04-cobrador", "from": "13-cobrador", "offset": 1.25, "frames": 132, "fadeIn": 0.12 },
+    { "id": "05-una-mas", "from": "15-solo-una-mas", "tail": true, "frames": 120, "fadeIn": 0.08 },
+    { "id": "06-cierre", "from": "16-logo", "offset": 0, "frames": 402, "fadeOut": 1.2 }
+  ]
+}

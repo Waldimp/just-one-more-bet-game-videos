@@ -1,0 +1,206 @@
+<!doctype html>
+<!--
+  Teaser IG · 06 · El cierre (0:17,25-0:23,95). El golpe del logo del trailer: La-9 con toda la
+  banda, que por fin resuelve la dominante del montaje.
+  Detras, la fachada del leon EN VERTICAL (la sala del parqueo con la composicion de movil,
+  img/fachada_vertical.png, 360x640 a x3), velada con la tinta. La ficha del logo (su hoja de
+  8 fotogramas) entra girando a x4 y frena de cara; a su derecha el titulo, de golpe.
+  Debajo: "¿CUANTOS DIAS AGUANTAS?", el boton "JUGALO GRATIS" y "TOCA EL LINK ↓", que senala
+  el hueco.
+  Entre ese texto y el aviso queda un HUECO LIMPIO para el sticker del enlace (y 1110-1404,
+  sin nada encima). El aviso "+18 · APUESTAS SIMULADAS / SIN DINERO REAL" va en su caja, por
+  encima de la barra de respuesta (todo el texto entre y = 250 y y = 1570).
+  No funde a negro: la historia se queda en este cuadro. Un tictac suave hasta el final.
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Teaser 06 · Just One More Bet</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="teaser-ig/js/cues.js"></script>
+    <script src="teaser-ig/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <link rel="stylesheet" href="teaser-ig/css/teaser.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+      #t06-cta .t {
+        color: var(--gold);
+      }
+      #t06-enlace {
+        text-shadow: var(--outline);
+      }
+      #t06-aviso {
+        position: absolute;
+        padding: 15px 30px 12px;
+        background: var(--ui);
+        border: 3px solid var(--ui-edge);
+        box-shadow: 6px 6px 0 var(--ink);
+      }
+      #t06-aviso .t {
+        position: relative;
+        display: block;
+        text-align: center;
+      }
+      #t06-aviso .line + .line {
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="t06-root"
+      data-composition-id="t06"
+      data-start="0"
+      data-duration="6.7"
+      data-width="1080"
+      data-height="1920"
+      data-fps="60"
+    >
+      <img class="pixel full" id="t06-fondo" src="teaser-ig/img/fachada_vertical.png" alt="" />
+      <div class="black" id="t06-velo"></div>
+      <div class="flash" id="t06-flash"></div>
+      <div id="t06-ficha"></div>
+      <div class="t c5 gold" id="t06-titulo1" data-t="title1">JUST ONE</div>
+      <div class="t c5 gold" id="t06-titulo2" data-t="title2">MORE BET</div>
+      <div class="t c4" id="t06-pregunta1" data-t="ask1">¿CUÁNTOS DÍAS</div>
+      <div class="t c4" id="t06-pregunta2" data-t="ask2">AGUANTÁS?</div>
+      <div class="uibox" id="t06-cta">
+        <div class="t c4 line" data-t="cta">JUGALO GRATIS</div>
+      </div>
+      <div class="t c3" id="t06-enlace" data-t="link">TOCÁ EL LINK ↓</div>
+      <div id="t06-aviso">
+        <div class="t c2 line gold" data-t="legal1">+18 · APUESTAS SIMULADAS</div>
+        <div class="t c2 line" data-t="legal2">SIN DINERO REAL</div>
+      </div>
+
+      <audio id="t06-ficha-sonido" src="sfx/chip.wav" data-start="1.62" data-duration="0.8"
+        data-volume="0.7" data-track-index="10"></audio>
+      <audio id="t06-boton" src="sfx/chip.wav" data-start="1.9" data-duration="0.8"
+        data-volume="0.4" data-track-index="11"></audio>
+      <audio id="t06-tic1" src="sfx/tick.wav" data-start="2.6" data-duration="0.4"
+        data-volume="0.22" data-track-index="12"></audio>
+      <audio id="t06-tic2" src="sfx/tock.wav" data-start="3.1" data-duration="0.4"
+        data-volume="0.22" data-track-index="13"></audio>
+      <audio id="t06-tic3" src="sfx/tick.wav" data-start="3.6" data-duration="0.4"
+        data-volume="0.24" data-track-index="12"></audio>
+      <audio id="t06-tic4" src="sfx/tock.wav" data-start="4.1" data-duration="0.4"
+        data-volume="0.24" data-track-index="13"></audio>
+      <audio id="t06-tic5" src="sfx/tick.wav" data-start="4.6" data-duration="0.4"
+        data-volume="0.26" data-track-index="12"></audio>
+      <audio id="t06-tic6" src="sfx/tock.wav" data-start="5.1" data-duration="0.4"
+        data-volume="0.26" data-track-index="13"></audio>
+      <audio id="t06-tic7" src="sfx/tick.wav" data-start="5.6" data-duration="0.4"
+        data-volume="0.28" data-track-index="12"></audio>
+      <audio id="t06-tic8" src="sfx/tock.wav" data-start="6.1" data-duration="0.4"
+        data-volume="0.28" data-track-index="13"></audio>
+    </div>
+
+    <script>
+      (function () {
+        const SCENE = "06-cierre";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("t06-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          document.getElementById("t06-velo").style.opacity = "0.68";
+
+          // La ficha: la hoja del juego (4x2 fotogramas de 64 px) a x4, sin suavizado.
+          const SIDE = 256;
+          const chip = document.getElementById("t06-ficha");
+          Object.assign(chip.style, {
+            position: "absolute", width: SIDE + "px", height: SIDE + "px",
+            backgroundImage: "url(shared/img/logo_chip_sheet.png)",
+            backgroundSize: SIDE * 4 + "px " + SIDE * 2 + "px", imageRendering: "pixelated",
+          });
+          const frame = function (i) {
+            const k = i % 8;
+            return -(k % 4) * SIDE + "px " + -Math.floor(k / 4) * SIDE + "px";
+          };
+
+          // Cabecera: la ficha a la izquierda y el titulo en dos lineas a su derecha, el grupo
+          // centrado, por debajo de la cabecera de la historia (y >= 250).
+          const t1 = document.getElementById("t06-titulo1");
+          const t2 = document.getElementById("t06-titulo2");
+          // Lineas apiladas: la caja de cada letra mide 1,3 em y se pisa con la de la linea de
+          // arriba, aunque la tinta no se toque. Se marca como buscado para `hyperframes check`.
+          const stacked = function (el) {
+            T.split(el).forEach(function (ch) { ch.setAttribute("data-layout-allow-overlap", ""); });
+          };
+          stacked(t1);
+          stacked(t2);
+          const GAP = 36;
+          const titleW = Math.max(t1.getBoundingClientRect().width, t2.getBoundingClientRect().width);
+          const left = T.snap((1080 - (SIDE + GAP + titleW)) / 2);
+          chip.style.left = left + "px";
+          chip.style.top = "276px";
+          t1.style.left = left + SIDE + GAP + "px";
+          t2.style.left = left + SIDE + GAP + "px";
+          t1.style.top = "279px";
+          t2.style.top = "414px";
+
+          const place = function (id, top) {
+            const el = document.getElementById(id);
+            el.style.top = top + "px";
+            T.center(el, 540);
+            return el;
+          };
+          const ask1 = place("t06-pregunta1", 600);
+          const ask2 = place("t06-pregunta2", 711);
+          const link = place("t06-enlace", 1020);
+
+          // El boton y el aviso: cajas de la interfaz del juego, centradas en la rejilla.
+          const box = function (id, top) {
+            const el = document.getElementById(id);
+            el.style.top = top + "px";
+            const w = el.getBoundingClientRect().width;
+            el.style.left = T.snap(540 - w / 2) + "px";
+            return el;
+          };
+          const cta = box("t06-cta", 840);
+          const legal = box("t06-aviso", 1419);
+
+          // El golpe: fogonazo de dos fotogramas, la ficha girando, el titulo de golpe.
+          tl.set("#t06-flash", { opacity: 1 }, 0);
+          tl.set("#t06-flash", { opacity: 0.45 }, 1 / 60);
+          tl.set("#t06-flash", { opacity: 0 }, 2 / 60);
+          let t = 0;
+          let dt = 0.03;
+          let i = 0;
+          while (t < 1.6 || i % 8 !== 0) {
+            tl.set(chip, { backgroundPosition: frame(i) }, t);
+            t += dt;
+            dt = Math.min(0.11, dt * 1.06);
+            i += 1;
+          }
+          tl.set(chip, { backgroundPosition: frame(0) }, t);
+          T.slam(tl, t1, 0);
+          T.slam(tl, t2, 0);
+          T.jolt(tl, chip, 0, 3);
+          T.jolt(tl, t1, 0, 3);
+          T.jolt(tl, t2, 0, 3);
+
+          // El aviso legal, pronto y quieto hasta el final.
+          tl.set(legal, { opacity: 0 }, 0);
+          tl.set(legal, { opacity: 1 }, 0.35);
+          legal.querySelectorAll(".t").forEach(function (el) { T.slam(tl, el, 0.35); });
+
+          // La pregunta a maquina; el boton de golpe; el enlace a maquina.
+          const after = T.type(tl, ask1, 0.8, 30);
+          T.type(tl, ask2, after + 0.05, 30);
+          tl.set(cta, { opacity: 0 }, 0);
+          tl.set(cta, { opacity: 1 }, 1.9);
+          T.slam(tl, cta.querySelector(".t"), 1.9);
+          T.jolt(tl, cta, 1.9, 2);
+          T.type(tl, link, 2.2, 24);
+          window.__timelines["t06"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

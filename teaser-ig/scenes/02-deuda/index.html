@@ -1,0 +1,83 @@
+<!doctype html>
+<!--
+  Teaser IG · 02 · La deuda (0:09,65). Corte en seco a silencio, como el reloj del trailer.
+  El prestamo de la intro del juego, en vertical (el cheque crema): a x6, la columna de las
+  cifras (recibes 500, devuelves 88.888.000, interes razonable) y el sello APROBADO que cae.
+  Con su golpe (el sonido del sello del juego) cae arriba "DEBES ₡88.888.000", en rojo.
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Teaser 02 · La deuda</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="teaser-ig/js/cues.js"></script>
+    <script src="teaser-ig/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <link rel="stylesheet" href="teaser-ig/css/teaser.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="t02-root"
+      data-composition-id="t02"
+      data-start="0"
+      data-duration="1.75"
+      data-width="1080"
+      data-height="1920"
+      data-fps="60"
+    >
+      <div class="shot" id="t02-plano">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-660px, -198px) scale(2)">
+          <video id="t02-c00" class="clip" src="teaser-ig/captures/ig_firma.mp4" data-start="0"
+            data-duration="1.75" data-media-start="3.25" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="t c5" id="t02-debes" data-t="owe">DEBÉS</div>
+      <div class="t c5 red" id="t02-deuda" data-t="debt">₡88.888.000</div>
+
+      <!-- El "silencio" es el murmullo del casino del juego, bajo: sin musica, pero no muerto.
+           Sigue en la escena 03 (mismo archivo, segundo siguiente). -->
+      <audio id="t02-ambiente" src="sfx/casino_ambience.mp3" data-start="0" data-duration="1.75"
+        data-media-start="30" data-volume="0.6" data-track-index="11"></audio>
+      <!-- El sello aterriza en el segundo 3,53 del clip: 0,28 de la escena. -->
+      <audio id="t02-sello" src="sfx/stamp_thud.wav" data-start="0.28" data-duration="0.31"
+        data-volume="1" data-track-index="10"></audio>
+    </div>
+
+    <script>
+      (function () {
+        const SCENE = "02-deuda";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("t02-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          const HIT = 0.28;
+          // Lineas apiladas: la caja de cada letra mide 1,3 em y se pisa con la de la linea de
+          // arriba, aunque la tinta no se toque. Se marca como buscado para `hyperframes check`.
+          const stacked = function (el) {
+            T.split(el).forEach(function (ch) { ch.setAttribute("data-layout-allow-overlap", ""); });
+          };
+          stacked(document.getElementById("t02-debes"));
+          stacked(document.getElementById("t02-deuda"));
+          [["#t02-debes", 258], ["#t02-deuda", 393]].forEach(function (item) {
+            const el = document.querySelector(item[0]);
+            el.style.top = item[1] + "px";
+            T.center(el, 540);
+            T.slam(tl, el, HIT);
+            T.jolt(tl, el, HIT, 3);
+          });
+          T.jolt(tl, "#t02-plano", HIT, 2);
+          window.__timelines["t02"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>

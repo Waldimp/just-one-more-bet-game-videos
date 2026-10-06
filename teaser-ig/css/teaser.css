@@ -1,0 +1,30 @@
+/*
+ * Teaser vertical de Instagram (1080x1920). Se carga DESPUES de shared/css/trailer.css: usa su
+ * sistema visual (paleta, rejilla de 3 px, Geist Pixel con el colon, contornos, cajas de la
+ * interfaz) y solo cambia lo que depende del formato.
+ *
+ * Los clips del juego vienen VERTICALES y a x3 (360x640 de juego = 1080x1920 de video), asi
+ * que un .zoom con scale(2) es x6 del juego: sigue siendo escala entera.
+ *
+ * Zonas de Instagram (historias): la cabecera tapa ~250 px arriba y la barra de respuesta
+ * ~350 px abajo. Nada que haya que leer va ahi: texto entre y = 250 y y = 1570.
+ */
+
+html,
+body {
+  width: 1080px;
+  height: 1920px;
+}
+
+.shot,
+.zoom,
+.shot video,
+.zoom video {
+  width: 1080px;
+  height: 1920px;
+}
+
+img.pixel.full {
+  width: 1080px;
+  height: 1920px;
+}

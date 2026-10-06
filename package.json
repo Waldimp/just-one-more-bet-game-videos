@@ -2,7 +2,7 @@
   "name": "just-one-more-bet-trailer",
   "private": true,
   "type": "module",
-  "description": "Trailer de Just One More Bet: una composicion de HyperFrames por escena, textos por idioma y montaje con ffmpeg.",
+  "description": "Trailer de Just One More Bet: una composicion de HyperFrames por escena, textos por idioma y montaje con ffmpeg. Teaser vertical de Instagram en teaser-ig/.",
   "scripts": {
     "capture": "node tools/capture.mjs",
     "music": "node tools/music.mjs",
@@ -12,6 +12,12 @@
     "assemble": "node tools/assemble.mjs",
     "preview": "npx --yes hyperframes@0.8.136 preview",
     "check": "npx --yes hyperframes@0.8.136 check",
-    "lint": "npx --yes hyperframes@0.8.136 lint"
+    "lint": "npx --yes hyperframes@0.8.136 lint",
+    "teaser:capture": "node teaser-ig/tools/capture.mjs",
+    "teaser:music": "node teaser-ig/tools/music.mjs",
+    "teaser:prepare": "node teaser-ig/tools/prepare.mjs",
+    "teaser:render": "node teaser-ig/tools/render.mjs",
+    "teaser:render-all": "node teaser-ig/tools/render.mjs all",
+    "teaser:assemble": "node teaser-ig/tools/assemble.mjs"
   }
 }

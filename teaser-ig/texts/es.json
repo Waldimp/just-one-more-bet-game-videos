@@ -1,0 +1,36 @@
+{
+  "_nota": "Textos del teaser de Instagram (voseo salvadoreno). Cambia una frase y vuelve a renderizar SOLO su escena: npm run teaser:render -- <escena>, y luego npm run teaser:assemble.",
+  "01-apuestas": {
+    "hook1": "¿TE LA",
+    "hook2": "JUGÁS?",
+    "win": "GANÁS.",
+    "lose": "PERDÉS.",
+    "more": "UNA MÁS."
+  },
+  "02-deuda": {
+    "owe": "DEBÉS",
+    "debt": "₡88.888.000"
+  },
+  "03-reloj": {
+    "l1": "150 SEGUNDOS",
+    "l2": "AL DÍA."
+  },
+  "04-cobrador": {
+    "l1": "Y ÉL SIEMPRE",
+    "l2": "LLEGA."
+  },
+  "05-una-mas": {
+    "l1": "¿SOLO",
+    "l2": "UNA MÁS?"
+  },
+  "06-cierre": {
+    "title1": "JUST ONE",
+    "title2": "MORE BET",
+    "ask1": "¿CUÁNTOS DÍAS",
+    "ask2": "AGUANTÁS?",
+    "cta": "JUGALO GRATIS",
+    "link": "TOCÁ EL LINK ↓",
+    "legal1": "+18 · APUESTAS SIMULADAS",
+    "legal2": "SIN DINERO REAL"
+  }
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<!--
+  Teaser IG · 04 · El cobrador (0:13,05). El pedal grave del cobrador del trailer.
+  La puerta del juego a x6: se entreabre, en la rendija la silueta, un brillo en la calva y las
+  gafas. Nunca entra. Arriba, en la pared: "Y EL SIEMPRE / LLEGA."
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Teaser 04 · El cobrador</title>
+    <script src="shared/vendor/gsap.min.js"></script>
+    <script src="teaser-ig/js/cues.js"></script>
+    <script src="teaser-ig/js/texts.js"></script>
+    <script src="shared/js/trailer.js"></script>
+    <link rel="stylesheet" href="shared/css/trailer.css" />
+    <link rel="stylesheet" href="teaser-ig/css/teaser.css" />
+    <style>
+      @font-face {
+        font-family: "Geist Pixel Trailer";
+        src: url("shared/fonts/GeistPixelTrailer.ttf") format("truetype");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="t04-root"
+      data-composition-id="t04"
+      data-start="0"
+      data-duration="2.2"
+      data-width="1080"
+      data-height="1920"
+      data-fps="60"
+    >
+      <div class="shot">
+        <div class="zoom" data-layout-allow-overflow style="transform: translate(-540px, -1236px) scale(2)">
+          <video id="t04-c00" class="clip" src="teaser-ig/captures/ig_cobrador.mp4" data-start="0"
+            data-duration="2.2" data-media-start="1.2" data-track-index="0" muted playsinline></video>
+        </div>
+      </div>
+      <div class="t c4" id="t04-l1" data-t="l1">Y ÉL SIEMPRE</div>
+      <div class="t c4" id="t04-l2" data-t="l2">LLEGA.</div>
+
+      <audio id="t04-puerta" src="sfx/door_creak.wav" data-start="0" data-duration="2"
+        data-volume="0.4" data-track-index="10"></audio>
+    </div>
+
+    <script>
+      (function () {
+        const SCENE = "04-cobrador";
+        const tl = gsap.timeline({ paused: true });
+        const ROOT = document.getElementById("t04-root");
+        document.fonts.ready.then(function () {
+          const T = TRAILER;
+          T.fill(SCENE, ROOT);
+          const l1 = document.getElementById("t04-l1");
+          const l2 = document.getElementById("t04-l2");
+          l1.style.top = "282px";
+          l2.style.top = "393px";
+          T.center(l1, 540);
+          T.center(l2, 540);
+          const after = T.type(tl, l1, 0.3, 24);
+          T.slam(tl, l2, Math.max(after + 0.12, 0.85));
+          window.__timelines["t04"] = tl;
+        });
+      })();
+    </script>
+  </body>
+</html>
