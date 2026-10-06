@@ -43,14 +43,14 @@ index.html  el tráiler completo para Studio (GENERADO por sync)               [
 |---|---|---|
 | 01-carcel | 4,0 | Negro, la reja se abre. "Saliste de la cárcel." Entra el jazz. |
 | 02-calle | 5,7 | Cartel, portazo y NO, cada uno a golpe. "Nadie te contrata." |
-| 03-callejon | 5,7 | El cobrador sale a la luz; la firma y el sobre. "Pero alguien sí te presta." |
-| 04-parqueo | 5,7 | La fachada del león; entra por la boca. 150 s, 3 apuestas, ₡88.888.000. Zoom a la boca. |
-| 05-hud | 5,2 | Dentro. HUD: DÍA 1, el reloj, las acciones. |
+| 03-callejon | 5,7 | El cobrador sale a la luz; la firma en el cheque, el sello APROBADO (con su golpe) y el sobre. "Pero alguien sí te presta." |
+| 04-parqueo | 5,7 | La fachada del león; entra por la boca. 150 s, 3 acciones, ₡88.888.000. Zoom a la boca. |
+| 05-hud | 5,2 | Dentro. La tarjeta del HUD: DÍA 1 y el reloj; las acciones, la plata y la deuda. |
 | 06-tragamonedas | 4,8 | Cuatro sietes y el quinto a cámara lenta: GANASTE. "Ganar se siente bien." |
 | 07-ruleta | 4,4 | La bola en el 2; la carta que se voltea y es un rey. "Perder… también se olvida rápido." |
 | 08-tomar-aire | 4,3 | Se fuma algo y mira a cámara. "(Es tabaco. Probablemente.)" Solo el contrabajo. |
 | 09-barra | 4,0 | Tres whiskys y ¡MODO EBRIO! ×1,25, con la pantalla meciéndose. |
-| 10-brujo | 5,7 | El Brujo, su tienda, la camisa llenándose de pines. "Te vende suerte. O eso dice." |
+| 10-brujo | 5,7 | El Brujo, su tienda (con el plano del casino), la camisa de la pausa llenándose de pines. "Te vende suerte. O eso dice." |
 | 11-montaje | 9,7 | A todo trapo (132→168): mesas, caballos a cámara lenta, el HUD. "Una más." ×3 |
 | 12-reloj | 4,0 | Silencio. 0:00. Tictac. |
 | 13-cobrador | 6,0 | La puerta se entreabre; la calva, las gafas, la mano con el expediente. "Él siempre llega." |

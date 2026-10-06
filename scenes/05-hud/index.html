@@ -1,10 +1,14 @@
 <!doctype html>
 <!--
   05 · Dentro (acto 2 arranca: 92). Las bandas de cine se recogen en escalones: el casino
-  ocupa la pantalla entera. El HUD de verdad, reaccionando: DIA 1, el reloj de 150 s que
-  empieza a bajar al cruzar la puerta, las tres acciones y el dinero.
-  Corte 1: plano general, ella entra al salon. Tiempo 4: x3 sobre el reloj. Tiempo 6: x3
-  sobre las acciones y el dinero. Mismo clip, el tiempo sigue corriendo entre cortes.
+  ocupa la pantalla entera. El HUD de verdad, reaccionando: una sola tarjeta arriba a la
+  izquierda con DIA 1, el reloj de 150 s que empieza a bajar al cruzar la puerta, las tres
+  acciones (fichas rojas), la plata y la deuda.
+  Corte 1: plano general, ella entra al salon. Tiempo 4: x5 sobre la mitad de arriba de la
+  tarjeta (DIA 1, TIEMPO, el reloj y su barra). Tiempo 6: x5 sobre la mitad de abajo
+  (ACCIONES, PLATA y DEUDA). A x5 la tarjeta (x 6-129 del juego) llena el ancho del cuadro;
+  cada mitad mide 72 px de juego: filas 3-74 y 78-149. Mismo clip, el tiempo sigue corriendo
+  entre cortes.
 -->
 <html
   lang="es"
@@ -41,13 +45,13 @@
           data-beats="0 4" data-sync="0@0" data-track-index="0" muted playsinline></video>
       </div>
       <div class="shot">
-        <div class="zoom" style="transform: scale(3)">
+        <div class="zoom" style="transform: translate(-60px, -45px) scale(5)">
           <video data-media-start="2.6" data-duration="1.3" data-start="2.6" id="s05-reloj" class="clip" src="captures/05_hud.mp4"
           data-beats="4 6" data-sync="0@0" data-track-index="0" muted playsinline></video>
         </div>
       </div>
       <div class="shot">
-        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+        <div class="zoom" style="transform: translate(-60px, -1170px) scale(5)">
           <video data-media-start="3.9" data-duration="1.3167" data-start="3.9" id="s05-acciones" class="clip" src="captures/05_hud.mp4"
           data-beats="6 end" data-sync="0@0" data-track-index="0" muted playsinline></video>
         </div>

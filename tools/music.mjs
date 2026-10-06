@@ -3,6 +3,7 @@
 //   audio/trailer_music.wav + audio/trailer_cues.json   (tools/trailer/build_trailer_music.py)
 //   sfx/*.wav                                           (tools/trailer/build_trailer_sfx.py)
 //   sfx/casino_ambience.mp3                             (el ambiente del casino del juego)
+//   sfx/stamp_thud.wav                                  (el golpe del sello del cheque, del juego)
 //
 // y sincroniza la hoja de cortes con las escenas. Si cambia la musica (tempo, compases),
 // cambian las duraciones: hay que volver a renderizar las escenas afectadas.
@@ -22,5 +23,9 @@ run(python, [join(game, "tools", "trailer", "build_trailer_sfx.py"), join(ROOT, 
 copyFileSync(
   join(game, "assets", "audio", "music", "casino-ambience.mp3"),
   join(ROOT, "sfx", "casino_ambience.mp3")
+);
+copyFileSync(
+  join(game, "assets", "audio", "sfx", "intro", "stamp-thud.wav"),
+  join(ROOT, "sfx", "stamp_thud.wav")
 );
 sync();

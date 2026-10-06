@@ -4,6 +4,13 @@
   Cortes cada dos tiempos al principio y cada tiempo despues (de ~0,9 s a ~0,36 s): las
   mesas, los caballos llegando a camara lenta y el HUD: el dinero sube y baja, las acciones
   pasan de tres a ninguna y el reloj vuela. Cada corte lleva su sonido del juego, bajo.
+  El HUD es una tarjeta arriba a la izquierda. Sus cortes la encuadran a x5 (la tarjeta llena
+  el ancho, como en la escena 05): la mitad de abajo (ACCIONES, PLATA y DEUDA) o la de arriba
+  (DIA 1 y el reloj); o a x3 desde la esquina, como el principio de la escena 12. Cada corte con
+  "Una mas." encima va con el encuadre que deja el texto en un hueco entre filas: el del tiempo
+  13 (c5, top 450) cae entre DIA 1 y el reloj (por eso ese corte empieza en la fila 2 y no en
+  la 3: el reloj baja 15 px y no roza el texto); los del 20 y el 23 (c6, top 570), entre PLATA
+  y DEUDA y bajo el reloj.
   Sale del pase de carrete de la escena 10.
   Texto: "Una mas." tres veces, cada vez mas grande; la ultima, en rojo.
   Cada corte: data-beats="desde hasta" (tiempos) y data-sync="segundo_fuente@tiempo".
@@ -51,7 +58,7 @@
         </div>
       </div>
       <div class="shot">
-        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+        <div class="zoom" style="transform: translate(-60px, -1170px) scale(5)">
           <video data-media-start="1.55" data-duration="0.8667" data-start="1.7833" id="s11-c02" class="clip" src="captures/11_hud.mp4"
             data-beats="4 6" data-sync="1.55@4" data-track-index="0" muted playsinline></video>
         </div>
@@ -85,7 +92,7 @@
         </div>
       </div>
       <div class="shot">
-        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+        <div class="zoom" style="transform: translate(-60px, -30px) scale(5)">
           <video data-media-start="3.2" data-duration="0.4" data-start="5.5167" id="s11-c08" class="clip" src="captures/11_hud.mp4"
             data-beats="13 14" data-sync="3.2@13" data-track-index="0" muted playsinline></video>
         </div>
@@ -107,7 +114,7 @@
         </div>
       </div>
       <div class="shot">
-        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+        <div class="zoom" style="transform: translate(-60px, -1170px) scale(5)">
           <video data-media-start="4" data-duration="0.3833" data-start="7.0667" id="s11-c12" class="clip" src="captures/11_hud.mp4"
             data-beats="17 18" data-sync="4.0@17" data-track-index="0" muted playsinline></video>
         </div>
@@ -123,7 +130,7 @@
             data-beats="19 20" data-sync="4.0@19" data-track-index="0" muted playsinline></video>
       </div>
       <div class="shot">
-        <div class="zoom" style="transform: translate(-3840px, 0) scale(3)">
+        <div class="zoom" style="transform: translate(-60px, -1170px) scale(5)">
           <video data-media-start="5.65" data-duration="0.3667" data-start="8.2" id="s11-c15" class="clip" src="captures/11_hud.mp4"
             data-beats="20 21" data-sync="5.65@20" data-track-index="0" muted playsinline></video>
         </div>

@@ -2,7 +2,10 @@
 <!--
   10 · El Brujo (126). Do7M9, Fa7M y Fa7M: lo mistico, con el vibrafono suelto.
   Corte 1: el saludo del Brujo (su frase de verdad, en su globo). Tiempo 4: su tienda de
-  pines y una compra. Tiempo 8: la camisa llenandose de pines, uno por golpe.
+  pines y una compra (con el plano del casino, el articulo fijo de la tienda). Tiempo 8: la
+  camisa llenandose de pines, uno por golpe. La camisa es la pestana CAMISA de la pausa, que
+  ocupa todo el cuadro con sus pestanas arriba (CAMISA, MAPA, CONFIGURACION): el rotulo se va
+  en ese corte para no tapar la de MAPA.
   Al final, el PASE DE CARRETE: cinco carretes que bajan y tapan el cuadro, y el montaje sale
   de ellos.
 -->
@@ -72,6 +75,7 @@
         const lines = T.growBox(tl, box, 960, 36, [T.beat(SCENE, 1), T.beat(SCENE, 4)]);
         T.type(tl, lines[0], T.beat(SCENE, 1), 34);
         T.type(tl, lines[1], T.beat(SCENE, 4), 34);
+        T.hide(tl, box, T.beat(SCENE, 8));
           const cue = T.cue(SCENE);
           T.reelPass(tl, document.getElementById("s10-pase"), "in", cue.duration - 0.2, 0.2);
           window.__timelines["s10"] = tl;

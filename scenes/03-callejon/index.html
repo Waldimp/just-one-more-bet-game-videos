@@ -2,8 +2,9 @@
 <!--
   03 · El callejon y la firma (acto 1, 84). Cmaj9 y Fa7M: la falsa esperanza en mayor.
   Corte 1: el callejon; ella llega a la farola y el cobrador ya sale a la luz (tiempo 2).
-  Corte 2 (tiempo 3): la firma de cerca, con el expediente de verdad (cifras del juego):
-  el garabato y el sobre que pasa de mano.
+  Corte 2 (tiempo 3): la firma de cerca, con el cheque de verdad (cifras del juego): el
+  odometro de DEVUELVES que acaba de girar, el garabato, el sello APROBADO que cae al
+  terminar la firma con su golpe seco (el sonido del juego) y el sobre que pasa de mano.
   Texto: a maquina desde el tiempo 4, con "si te presta" en dorado (lo que dice el cobrador
   va en dorado en el juego).
 -->
@@ -45,6 +46,10 @@
       </div>
       <div class="bar top"></div>
       <div class="bar bottom"></div>
+      <!-- El golpe seco del sello: en el juego suena cuando el sello toca el papel
+           (IntroStaging.stamp_hit_at = 3,52 s del plano de la firma = 3,75 s de la escena). -->
+      <audio id="s03-sello" src="sfx/stamp_thud.wav" data-start="3.75" data-duration="0.31"
+        data-volume="0.5" data-track-index="10"></audio>
       <div class="t" id="s03-texto"><span data-t="line1">Pero alguien </span><span class="gold" data-t="line2">sí te presta.</span></div>
     </div>
 

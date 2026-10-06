@@ -1,8 +1,11 @@
 <!doctype html>
 <!--
   12 · Corte en seco. La musica se calla de golpe (el montaje acaba en la dominante y no
-  resuelve) y queda el tictac. El HUD de verdad con el reloj en 0:00, x3; a los dos
-  segundos, golpe a x6 sobre la cifra. Sin texto.
+  resuelve) y queda el tictac. El HUD de verdad (la tarjeta de arriba a la izquierda) con el
+  reloj en 0:00, x3; a los dos segundos, golpe a x7 sobre la cifra. x7 y no x6: a x6 caben 60
+  filas de juego y no hay 60 libres entre DIA 1 (filas 13-23) y las fichas de ACCIONES (82-91),
+  asi que asomaba un trozo de una o de otras. A x7 (91x51 px de juego desde x 4, y 26) quedan
+  solo la cifra y la barra vacia. Sin texto.
 -->
 <html
   lang="es"
@@ -69,9 +72,9 @@
         document.fonts.ready.then(function () {
           const T = TRAILER;
           T.fill(SCENE, ROOT);
-          // x3 sobre el HUD y golpe de zoom ENTERO a x6 sobre "0:00", en el quinto tic.
+          // x3 sobre el HUD y golpe de zoom ENTERO a x7 sobre "0:00", en el quinto tic.
           tl.set("#s12-zoom", { x: 0, y: 0, scale: 3 }, 0);
-          tl.set("#s12-zoom", { x: -1386, y: 0, scale: 6 }, 2.25);
+          tl.set("#s12-zoom", { x: -84, y: -546, scale: 7 }, 2.25);
           window.__timelines["s12"] = tl;
         });
       })();
